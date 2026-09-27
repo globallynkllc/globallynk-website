@@ -9,17 +9,18 @@ Plain HTML, CSS and JavaScript — no build step.
 ## Preview locally
 
 ```
-python -m http.server 8000
+python serve.py 8000
 ```
 
 Then open http://localhost:8000
 
 ## Pages
 
-- `index.html` — Home
-- `products.html` — Nonwoven fabrics, electric mountain bikes, auto spare parts, baby products
-- `markets.html` — Markets & logistics
-- `contact.html` — Request a quote
+- `/` (`index.html`) — Home
+- `/about` — Who we are, team, how it works
+- `/products` — Nonwoven fabrics, electric mountain bikes, auto spare parts, baby products
+- `/markets` — Markets & logistics, transit times, load planner
+- `/contact` — Request a quote
 
 ## Deploy
 

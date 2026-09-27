@@ -18,17 +18,44 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
+      <a href="/" class="logo" aria-label="GlobalLynk LLC home">
         <img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44">
         <span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="products.html" aria-current="page">Products</a>
-        <a href="markets.html">Markets &amp; Logistics</a>
-        <a href="index.html#about">About</a>
-        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/products" class="nav-link" aria-current="page">Products</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-products" aria-label="Products menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-products">
+            <a href="/products#nonwoven">Nonwoven Fabrics<span>Now trading</span></a>
+            <a href="/products#e-bikes">Electric Mountain Bikes<span>On request</span></a>
+            <a href="/products#auto-parts">Auto Spare Parts<span>On request</span></a>
+            <a href="/products#baby">Baby Products<span>Coming soon</span></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/markets" class="nav-link">Markets &amp; Logistics</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-markets" aria-label="Markets and Logistics menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-markets">
+            <a href="/markets#markets">Where we trade</a>
+            <a href="/markets#transit">Transit times</a>
+            <a href="/markets#planner">Container load planner</a>
+            <a href="/markets#terms">Trade terms</a>
+            <a href="/markets#quality">Quality &amp; documents</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-about" aria-label="About menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-about">
+            <a href="/about#about">Who we are</a>
+            <a href="/about#team">Meet the team</a>
+            <a href="/about#process">How it works</a>
+          </div>
+        </div>
+        <a href="/contact" class="btn btn-primary">Request a Quote</a>
       </nav>
     </div>
   </header>
@@ -60,7 +87,52 @@
           <span class="tag">Now trading</span>
         </div>
 
-        <p class="eyebrow reveal">Fabric catalog — filter by application</p>
+        <p class="eyebrow reveal">Explore by fabric type</p>
+        <p class="reveal" style="color:var(--ink-soft);max-width:620px;margin:-4px 0 22px">Pick a fabric to see its specifications and typical uses. Hover the swatch to look closer, and try different colors.</p>
+        <div class="fx reveal" data-fx>
+          <div class="fx-tabs" role="tablist" aria-label="Fabric types">
+            <button class="fx-tab" role="tab" aria-selected="true" data-fab="spunbond"><span class="tx tx-spunbond"></span>PP Spunbond</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="sms"><span class="tx tx-sms"></span>SMS / SMMS</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="meltblown"><span class="tx tx-meltblown"></span>Meltblown</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="needle"><span class="tx tx-needle"></span>Needle Punched</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="spunlace"><span class="tx tx-spunlace"></span>Spunlace</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="laminated"><span class="tx tx-laminated"></span>Laminated</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="treated"><span class="tx tx-treated"></span>Specialty Treated</button>
+            <button class="fx-tab" role="tab" aria-selected="false" tabindex="-1" data-fab="printed"><span class="tx tx-printed"></span>Printed &amp; Perforated</button>
+          </div>
+
+          <div class="fx-panel" role="tabpanel" aria-live="polite">
+            <div class="fx-stage">
+              <div class="swatch tx tx-spunbond" data-swatch></div>
+              <div class="lens" aria-hidden="true"><div class="lens-inner tx tx-spunbond" data-lens></div></div>
+              <span class="stage-hint mono">Hover to magnify</span>
+              <div class="colors" role="group" aria-label="Fabric color">
+                <button class="color-dot" type="button" aria-label="White" aria-pressed="true" data-color="#F7F4EE" style="background:#F7F4EE"></button>
+                <button class="color-dot" type="button" aria-label="Black" aria-pressed="false" data-color="#2B2723" data-dark style="background:#2B2723"></button>
+                <button class="color-dot" type="button" aria-label="Green" aria-pressed="false" data-color="#6E8B5E" style="background:#6E8B5E"></button>
+                <button class="color-dot" type="button" aria-label="Blue" aria-pressed="false" data-color="#7FA3C4" style="background:#7FA3C4"></button>
+                <button class="color-dot" type="button" aria-label="Red" aria-pressed="false" data-color="#B25A4E" style="background:#B25A4E"></button>
+              </div>
+              <div class="stage-label"><span class="mono">Structure</span><span data-fx="structure"></span></div>
+            </div>
+            <div class="fx-body">
+              <span class="mono" data-fx="kicker"></span>
+              <h3 data-fx="title"></h3>
+              <p data-fx="text"></p>
+              <div class="fx-specs">
+                <div><span>Typical weight</span><strong data-fx="gsm"></strong></div>
+                <div><span>Width</span><strong data-fx="width"></strong></div>
+                <div><span>Material</span><strong data-fx="material"></strong></div>
+                <div><span>Key property</span><strong data-fx="prop"></strong></div>
+              </div>
+              <div class="uses" data-fx="uses"></div>
+              <a href="/contact?division=textile" class="btn btn-primary">Request pricing <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <p class="eyebrow reveal" style="margin-top:72px">Find fabrics by application</p>
+        <p class="reveal" style="color:var(--ink-soft);max-width:620px;margin:-4px 0 18px">Filter by what you're making, then tap a fabric to see it in the explorer above.</p>
         <div class="fab-filter reveal" role="group" aria-label="Filter fabrics by application">
           <button class="chip" type="button" data-app="all" aria-pressed="true">All fabrics</button>
           <button class="chip" type="button" data-app="medical" aria-pressed="false">Medical &amp; hygiene</button>
@@ -72,14 +144,14 @@
         </div>
 
         <div class="fab-grid" id="fab-grid">
-          <div class="fab-card reveal" data-apps="agri furniture packaging hospitality medical"><div class="tx tx-spunbond"></div><div class="fab-body"><span class="mono">S · SS · SSS · 10–200 gsm</span><h3>PP Spunbond</h3><p>The all-rounder: strong, light, breathable and cost-effective. Any color, many treatments.</p></div></div>
-          <div class="fab-card reveal" data-apps="medical"><div class="tx tx-sms"></div><div class="fab-body"><span class="mono">SMS · SMMS · 15–80 gsm</span><h3>SMS / SMMS</h3><p>Spunbond–meltblown–spunbond layers for a breathable fluid and bacterial barrier.</p></div></div>
-          <div class="fab-card reveal" data-apps="medical industrial"><div class="tx tx-meltblown"></div><div class="fab-body"><span class="mono">Ultra-fine fiber · 15–100 gsm</span><h3>Meltblown</h3><p>Microfiber web for filtration: mask filter layers, air and liquid filters, oil absorbents.</p></div></div>
-          <div class="fab-card reveal" data-apps="furniture industrial"><div class="tx tx-needle"></div><div class="fab-body"><span class="mono">PP / PET · 80–1,000 gsm</span><h3>Needle Punched</h3><p>Dense, felt-like fabric for geotextiles, carpet backing, automotive interiors and padding.</p></div></div>
-          <div class="fab-card reveal" data-apps="medical hospitality"><div class="tx tx-spunlace"></div><div class="fab-body"><span class="mono">Viscose / PET · 30–120 gsm</span><h3>Spunlace</h3><p>Soft, absorbent and cloth-like: wet wipes, cosmetic pads, cleaning cloths.</p></div></div>
-          <div class="fab-card reveal" data-apps="medical packaging furniture industrial"><div class="tx tx-laminated"></div><div class="fab-body"><span class="mono">PE film · BOPP · raffia</span><h3>Laminated</h3><p>Waterproof laminates for protective gowns, laminated bags, mattress protectors and roofing.</p></div></div>
-          <div class="fab-card reveal" data-apps="agri furniture medical industrial"><div class="tx tx-treated"></div><div class="fab-body"><span class="mono">UV · FR · hydrophilic · anti-static</span><h3>Specialty Treated</h3><p>UV-stabilized, flame-retardant, hydrophilic, anti-static, anti-slip, antibacterial or super-soft.</p></div></div>
-          <div class="fab-card reveal" data-apps="packaging hospitality"><div class="tx tx-printed"></div><div class="fab-body"><span class="mono">Custom print · perforation</span><h3>Printed &amp; Perforated</h3><p>Your pattern or logo printed on the roll, or perforated for tablecloths, wrapping and hygiene.</p></div></div>
+          <div class="fab-card reveal" data-fab="spunbond" role="button" tabindex="0" aria-label="Show PP Spunbond in the fabric explorer" data-apps="agri furniture packaging hospitality medical"><div class="tx tx-spunbond"></div><div class="fab-body"><span class="mono">S · SS · SSS · 10–200 gsm</span><h3>PP Spunbond</h3><p>The all-rounder: strong, light, breathable and cost-effective. Any color, many treatments.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="sms" role="button" tabindex="0" aria-label="Show SMS / SMMS in the fabric explorer" data-apps="medical"><div class="tx tx-sms"></div><div class="fab-body"><span class="mono">SMS · SMMS · 15–80 gsm</span><h3>SMS / SMMS</h3><p>Spunbond–meltblown–spunbond layers for a breathable fluid and bacterial barrier.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="meltblown" role="button" tabindex="0" aria-label="Show Meltblown in the fabric explorer" data-apps="medical industrial"><div class="tx tx-meltblown"></div><div class="fab-body"><span class="mono">Ultra-fine fiber · 15–100 gsm</span><h3>Meltblown</h3><p>Microfiber web for filtration: mask filter layers, air and liquid filters, oil absorbents.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="needle" role="button" tabindex="0" aria-label="Show Needle Punched in the fabric explorer" data-apps="furniture industrial"><div class="tx tx-needle"></div><div class="fab-body"><span class="mono">PP / PET · 80–1,000 gsm</span><h3>Needle Punched</h3><p>Dense, felt-like fabric for geotextiles, carpet backing, automotive interiors and padding.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="spunlace" role="button" tabindex="0" aria-label="Show Spunlace in the fabric explorer" data-apps="medical hospitality"><div class="tx tx-spunlace"></div><div class="fab-body"><span class="mono">Viscose / PET · 30–120 gsm</span><h3>Spunlace</h3><p>Soft, absorbent and cloth-like: wet wipes, cosmetic pads, cleaning cloths.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="laminated" role="button" tabindex="0" aria-label="Show Laminated in the fabric explorer" data-apps="medical packaging furniture industrial"><div class="tx tx-laminated"></div><div class="fab-body"><span class="mono">PE film · BOPP · raffia</span><h3>Laminated</h3><p>Waterproof laminates for protective gowns, laminated bags, mattress protectors and roofing.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="treated" role="button" tabindex="0" aria-label="Show Specialty Treated in the fabric explorer" data-apps="agri furniture medical industrial"><div class="tx tx-treated"></div><div class="fab-body"><span class="mono">UV · FR · hydrophilic · anti-static</span><h3>Specialty Treated</h3><p>UV-stabilized, flame-retardant, hydrophilic, anti-static, anti-slip, antibacterial or super-soft.</p><span class="view mono">View details ↑</span></div></div>
+          <div class="fab-card reveal" data-fab="printed" role="button" tabindex="0" aria-label="Show Printed and Perforated in the fabric explorer" data-apps="packaging hospitality"><div class="tx tx-printed"></div><div class="fab-body"><span class="mono">Custom print · perforation</span><h3>Printed &amp; Perforated</h3><p>Your pattern or logo printed on the roll, or perforated for tablecloths, wrapping and hygiene.</p><span class="view mono">View details ↑</span></div></div>
         </div>
 
         <div class="split" style="margin-bottom:64px">
@@ -106,7 +178,7 @@
               <tr><th>Testing</th><td>Technical data sheets and third-party test reports (e.g. SGS) available on request</td></tr>
               <tr><th>Packing</th><td>Rolls on paper cores with poly wrap and labels, loaded for container efficiency</td></tr>
             </table>
-            <a href="contact.html?division=textile" class="btn btn-dark" style="margin-top:24px">Request fabric pricing <span class="arrow">→</span></a>
+            <a href="/contact?division=textile" class="btn btn-dark" style="margin-top:24px">Request fabric pricing <span class="arrow">→</span></a>
           </div>
         </div>
 
@@ -205,7 +277,7 @@
                 <p>Yes. Our private-label program covers spec selection, custom branding (paint, decals, logos, packaging), compliance configuration and factory coordination.</p>
               </details>
             </div>
-            <a href="contact.html?division=bike" class="btn btn-dark" style="margin-top:24px">Request an e-MTB quote <span class="arrow">→</span></a>
+            <a href="/contact?division=bike" class="btn btn-dark" style="margin-top:24px">Request an e-MTB quote <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -227,7 +299,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
           <input type="search" id="part-search" placeholder="Search a part, e.g. alternator, clutch, radiator…" aria-label="Search part categories">
         </div>
-        <p class="search-empty" id="part-empty">No category matches that yet — <a href="contact.html?division=auto">send us the part number</a> and we'll source it.</p>
+        <p class="search-empty" id="part-empty">No category matches that yet — <a href="/contact?division=auto">send us the part number</a> and we'll source it.</p>
 
         <div class="cat-grid" id="part-grid">
           <div class="cat reveal"><div class="cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="12" height="10" rx="1"/><path d="M16 11h3v4h-3M8 8V5h4v3M2 12h2"/></svg></div><h3>Engine Components</h3><p>Pistons, crankshafts, gaskets, timing belts &amp; chains, bearings, oil &amp; water pumps.</p></div>
@@ -270,7 +342,7 @@
               <tr><th>Buyers</th><td>Distributors, wholesalers, retail chains, fleet operators and institutional buyers</td></tr>
               <tr><th>Best inquiry</th><td>OEM part numbers or vehicle make, model, year and engine code</td></tr>
             </table>
-            <a href="contact.html?division=auto" class="btn btn-dark" style="margin-top:24px">Submit a parts inquiry <span class="arrow">→</span></a>
+            <a href="/contact?division=auto" class="btn btn-dark" style="margin-top:24px">Submit a parts inquiry <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -298,7 +370,7 @@
               <li>Strollers and nursery gear</li>
             </ul>
             <p style="color:var(--ink-soft);font-size:.86rem">Non-food and non-medical products only.</p>
-            <a href="contact.html?division=baby" class="btn btn-primary">Register interest <span class="arrow">→</span></a>
+            <a href="/contact?division=baby" class="btn btn-primary">Register interest <span class="arrow">→</span></a>
           </div>
           <div class="soon-art">
             <span class="mono">Launching soon</span>
@@ -312,7 +384,7 @@
             <p>As a general trading house we source other products on request. Tell us what you need.</p>
           </div>
           <div class="actions">
-            <a href="contact.html?division=other" class="btn btn-dark">Send a sourcing request <span class="arrow">→</span></a>
+            <a href="/contact?division=other" class="btn btn-dark">Send a sourcing request <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -323,17 +395,18 @@
     <div class="metal-strip" aria-hidden="true"></div>
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
+        <a href="/" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
         <p>International trading — linking manufacturers with buyers worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="products.html#nonwoven">Nonwoven Fabrics</a></li>
-          <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
-          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
-          <li><a href="products.html#baby">Baby Products</a></li>
-          <li><a href="markets.html">Markets &amp; Logistics</a></li>
+          <li><a href="/products#nonwoven">Nonwoven Fabrics</a></li>
+          <li><a href="/products#e-bikes">Electric Mountain Bikes</a></li>
+          <li><a href="/products#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="/products#baby">Baby Products</a></li>
+          <li><a href="/markets">Markets &amp; Logistics</a></li>
+          <li><a href="/about">About &amp; Team</a></li>
         </ul>
       </div>
       <div class="footer-col">

@@ -18,17 +18,44 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
+      <a href="/" class="logo" aria-label="GlobalLynk LLC home">
         <img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44">
         <span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="markets.html" aria-current="page">Markets &amp; Logistics</a>
-        <a href="index.html#about">About</a>
-        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/products" class="nav-link">Products</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-products" aria-label="Products menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-products">
+            <a href="/products#nonwoven">Nonwoven Fabrics<span>Now trading</span></a>
+            <a href="/products#e-bikes">Electric Mountain Bikes<span>On request</span></a>
+            <a href="/products#auto-parts">Auto Spare Parts<span>On request</span></a>
+            <a href="/products#baby">Baby Products<span>Coming soon</span></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/markets" class="nav-link" aria-current="page">Markets &amp; Logistics</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-markets" aria-label="Markets and Logistics menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-markets">
+            <a href="/markets#markets">Where we trade</a>
+            <a href="/markets#transit">Transit times</a>
+            <a href="/markets#planner">Container load planner</a>
+            <a href="/markets#terms">Trade terms</a>
+            <a href="/markets#quality">Quality &amp; documents</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-about" aria-label="About menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-about">
+            <a href="/about#about">Who we are</a>
+            <a href="/about#team">Meet the team</a>
+            <a href="/about#process">How it works</a>
+          </div>
+        </div>
+        <a href="/contact" class="btn btn-primary">Request a Quote</a>
       </nav>
     </div>
   </header>
@@ -42,6 +69,7 @@
         <nav class="subnav" aria-label="On this page">
           <a href="#markets">Where we trade</a>
           <a href="#transit">Transit times</a>
+          <a href="#planner">Load planner</a>
           <a href="#terms">Trade terms</a>
           <a href="#quality">Quality &amp; documents</a>
         </nav>
@@ -144,6 +172,55 @@
       </div>
     </section>
 
+    <!-- Load planner -->
+    <section id="planner" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Tool · Container load planner</p>
+            <h2>How many rolls fit in a container?</h2>
+          </div>
+          <p class="section-lede">Enter your roll or carton size and quantity to estimate total volume and weight, and see which container fits. A quick planning estimate before you ask for a quote.</p>
+        </div>
+
+        <div class="planner reveal" data-planner>
+          <div class="planner-inputs">
+            <p class="mono" style="color:var(--ink-soft);margin-bottom:10px">Presets</p>
+            <div class="presets">
+              <button class="chip" type="button" data-preset="160,35,35,110" data-qty="150" aria-pressed="true">Fabric roll 1.6m</button>
+              <button class="chip" type="button" data-preset="320,40,40,230" data-qty="60" aria-pressed="false">Fabric roll 3.2m</button>
+              <button class="chip" type="button" data-preset="60,40,40,18" data-qty="400" aria-pressed="false">Carton</button>
+              <button class="chip" type="button" data-preset="120,100,120,400" data-qty="20" aria-pressed="false">Pallet</button>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="pl-l">Length (cm)</label><input id="pl-l" type="number" min="1" value="160" inputmode="decimal"></div>
+              <div class="field"><label for="pl-w">Width (cm)</label><input id="pl-w" type="number" min="1" value="35" inputmode="decimal"></div>
+              <div class="field"><label for="pl-h">Height (cm)</label><input id="pl-h" type="number" min="1" value="35" inputmode="decimal"></div>
+            </div>
+            <div class="field-row" style="grid-template-columns:1fr 1fr">
+              <div class="field"><label for="pl-kg">Weight per unit (kg)</label><input id="pl-kg" type="number" min="0" value="110" inputmode="decimal"></div>
+              <div class="field"><label for="pl-q">Quantity</label><input id="pl-q" type="number" min="1" value="150" inputmode="numeric"></div>
+            </div>
+            <input id="pl-range" type="range" min="10" max="1500" step="5" value="150" aria-label="Quantity slider" style="width:100%;accent-color:var(--gold)">
+            <p class="planner-note" style="margin-top:10px">For rolls, use roll length × diameter × diameter.</p>
+          </div>
+          <div class="planner-out" aria-live="polite">
+            <div class="totals">
+              <div class="total"><span class="mono">Total volume</span><strong data-out="cbm">0</strong> <span class="mono">m³</span></div>
+              <div class="total"><span class="mono">Total weight</span><strong data-out="kg">0</strong> <span class="mono">kg</span></div>
+            </div>
+            <div class="box-list">
+              <div class="box" data-box="20"><span class="box-name">20' GP</span><div class="box-bar"><div class="box-fill"></div></div><span class="box-pct"></span></div>
+              <div class="box" data-box="40"><span class="box-name">40' GP</span><div class="box-bar"><div class="box-fill"></div></div><span class="box-pct"></span></div>
+              <div class="box" data-box="40hc"><span class="box-name">40' HC</span><div class="box-bar"><div class="box-fill"></div></div><span class="box-pct"></span></div>
+            </div>
+            <div class="planner-verdict" data-out="verdict"></div>
+            <p class="planner-note">Estimate only. Assumes about 85% of the container's internal volume is usable. Actual loading depends on roll size, packing and carrier limits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Terms -->
     <section id="terms" class="section section-dark">
       <div class="container">
@@ -239,7 +316,7 @@
             <p>Tell us the product, quantity and destination port. We'll quote the goods and the freight together.</p>
           </div>
           <div class="actions">
-            <a href="contact.html" class="btn btn-dark">Request a quote with logistics <span class="arrow">→</span></a>
+            <a href="/contact" class="btn btn-dark">Request a quote with logistics <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -250,17 +327,18 @@
     <div class="metal-strip" aria-hidden="true"></div>
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
+        <a href="/" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
         <p>International trading — linking manufacturers with buyers worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="products.html#nonwoven">Nonwoven Fabrics</a></li>
-          <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
-          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
-          <li><a href="products.html#baby">Baby Products</a></li>
-          <li><a href="markets.html">Markets &amp; Logistics</a></li>
+          <li><a href="/products#nonwoven">Nonwoven Fabrics</a></li>
+          <li><a href="/products#e-bikes">Electric Mountain Bikes</a></li>
+          <li><a href="/products#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="/products#baby">Baby Products</a></li>
+          <li><a href="/markets">Markets &amp; Logistics</a></li>
+          <li><a href="/about">About &amp; Team</a></li>
         </ul>
       </div>
       <div class="footer-col">

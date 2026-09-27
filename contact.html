@@ -18,17 +18,44 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
+      <a href="/" class="logo" aria-label="GlobalLynk LLC home">
         <img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44">
         <span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="markets.html">Markets &amp; Logistics</a>
-        <a href="index.html#about">About</a>
-        <a href="contact.html" class="btn btn-primary" aria-current="page">Request a Quote</a>
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/products" class="nav-link">Products</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-products" aria-label="Products menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-products">
+            <a href="/products#nonwoven">Nonwoven Fabrics<span>Now trading</span></a>
+            <a href="/products#e-bikes">Electric Mountain Bikes<span>On request</span></a>
+            <a href="/products#auto-parts">Auto Spare Parts<span>On request</span></a>
+            <a href="/products#baby">Baby Products<span>Coming soon</span></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/markets" class="nav-link">Markets &amp; Logistics</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-markets" aria-label="Markets and Logistics menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-markets">
+            <a href="/markets#markets">Where we trade</a>
+            <a href="/markets#transit">Transit times</a>
+            <a href="/markets#planner">Container load planner</a>
+            <a href="/markets#terms">Trade terms</a>
+            <a href="/markets#quality">Quality &amp; documents</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+          <button class="nav-caret" type="button" aria-expanded="false" aria-controls="dd-about" aria-label="About menu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
+          <div class="dropdown" id="dd-about">
+            <a href="/about#about">Who we are</a>
+            <a href="/about#team">Meet the team</a>
+            <a href="/about#process">How it works</a>
+          </div>
+        </div>
+        <a href="/contact" class="btn btn-primary" aria-current="page">Request a Quote</a>
       </nav>
     </div>
   </header>
@@ -152,17 +179,18 @@
     <div class="metal-strip" aria-hidden="true"></div>
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
+        <a href="/" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
         <p>International trading — linking manufacturers with buyers worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="products.html#nonwoven">Nonwoven Fabrics</a></li>
-          <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
-          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
-          <li><a href="products.html#baby">Baby Products</a></li>
-          <li><a href="markets.html">Markets &amp; Logistics</a></li>
+          <li><a href="/products#nonwoven">Nonwoven Fabrics</a></li>
+          <li><a href="/products#e-bikes">Electric Mountain Bikes</a></li>
+          <li><a href="/products#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="/products#baby">Baby Products</a></li>
+          <li><a href="/markets">Markets &amp; Logistics</a></li>
+          <li><a href="/about">About &amp; Team</a></li>
         </ul>
       </div>
       <div class="footer-col">

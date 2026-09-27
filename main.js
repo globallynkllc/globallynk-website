@@ -47,6 +47,33 @@
 
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* ---------- Dropdown menus ---------- */
+  var navItems = $$(".nav-item");
+  function closeMenus(except) {
+    navItems.forEach(function (it) {
+      if (it === except) return;
+      it.classList.remove("open");
+      $(".nav-caret", it).setAttribute("aria-expanded", "false");
+    });
+  }
+  navItems.forEach(function (it) {
+    var caret = $(".nav-caret", it);
+    caret.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = !it.classList.contains("open");
+      closeMenus(it);
+      it.classList.toggle("open", open);
+      caret.setAttribute("aria-expanded", open);
+    });
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".nav-item")) closeMenus(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var openItem = $(".nav-item.open");
+    closeMenus();
+    if (openItem) $(".nav-caret", openItem).focus();
+  });
+
   /* ---------- Reveal on scroll ---------- */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -557,7 +584,20 @@
       lensIn.style.height = r.height + "px";
       lensIn.style.transform = "translate(" + (L / 2 - x * ZOOM) + "px," + (L / 2 - y * ZOOM) + "px) scale(" + ZOOM + ")";
     });
-    showFab("spunbond");
+    // Catalog cards (products page) open their fabric in the explorer
+    var fabCardsAll = $$(".fab-card[data-fab]");
+    var markCurrent = function (key) { fabCardsAll.forEach(function (c) { c.classList.toggle("current", c.getAttribute("data-fab") === key); }); };
+    fxTabs.forEach(function (tb) { tb.addEventListener("click", function () { markCurrent(tb.getAttribute("data-fab")); }); });
+    fabCardsAll.forEach(function (card) {
+      var open = function () {
+        var key = card.getAttribute("data-fab");
+        showFab(key); markCurrent(key);
+        fx.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      };
+      card.addEventListener("click", open);
+      card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    });
+    showFab("spunbond"); markCurrent("spunbond");
   }
 
   /* ---------- Fabric catalog filter (products) ---------- */

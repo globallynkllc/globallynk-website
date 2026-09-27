@@ -11,18 +11,26 @@ step, no framework, no backend, no package.json.
 Pages (siblings in the repo root, sharing `styles.css` and `main.js`):
 
 ```
-index.html     -- Home: hero globe, about, nonwoven fabric explorer, process, load planner, portfolio
-products.html  -- 01 Nonwoven fabrics, 02 e-MTBs, 03 auto parts, 04 baby products (coming soon)
-markets.html   -- Markets & logistics: region explorer globe, transit lookup, terms, QC
+index.html     -- Home: hero globe, ticker, "What we trade" cards, Why GlobalLynk (6), CTA
+about.html     -- Who we are, Meet the team, How it works
+products.html  -- 01 Nonwoven (fabric explorer + application catalog), 02 e-MTBs, 03 auto parts, 04 baby
+markets.html   -- Region explorer globe, transit lookup, container load planner, terms, QC
 contact.html   -- 3-step quote builder (sends via mailto: or WhatsApp — nothing stored)
 styles.css     -- All styles
 main.js        -- All interactions (vanilla JS IIFE, no dependencies)
+serve.py       -- Local preview server with clean URLs (python serve.py 8000)
 logo-mark.svg  -- GL monogram with orbit arc (from the business card)
 favicon.svg
+CNAME          -- custom domain for GitHub Pages; don't delete
 ```
 
-When adding a page, copy the header/footer markup from an existing page and
-update the nav in **every** page's `<header>` and the footer "Explore" list.
+**Clean URLs:** link internally as `/`, `/products`, `/about#team`, `/contact?division=textile`
+— never `something.html`. GitHub Pages serves `/products` from `products.html`.
+Local preview must use `python serve.py` (plain `http.server` can't resolve clean URLs).
+
+**Nav:** each page has the same `<nav class="site-nav">` with dropdowns (`.nav-item` >
+`.nav-link` + `.nav-caret` + `.dropdown`); only `aria-current` differs. When adding a page,
+update the nav and the footer "Explore" list in **every** page.
 
 ## Company Facts (use these, don't invent new ones)
 
