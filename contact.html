@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote | GlobalLynk LLC</title>
+  <meta name="description" content="Request a quote from GlobalLynk LLC for auto spare parts, electric mountain bikes, nonwoven fabric or any sourcing request. Email, phone or WhatsApp." />
+  <meta name="theme-color" content="#0B1830" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
+        <span class="logo-mark">GL</span>
+        <span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="markets.html">Markets &amp; Logistics</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html" class="btn btn-primary" aria-current="page">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Request a quote</p>
+        <h1>Tell us what you need.</h1>
+        <p>Three quick steps. Your request is sent from your own email app or WhatsApp — nothing is stored on this website.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container quote-wrap">
+        <form class="quote" id="quote" novalidate>
+          <ol class="quote-steps">
+            <li class="active" data-step-ind="1"><span class="n">1</span><span class="t">Product</span></li>
+            <li data-step-ind="2"><span class="n">2</span><span class="t">Order details</span></li>
+            <li data-step-ind="3"><span class="n">3</span><span class="t">Your details</span></li>
+          </ol>
+          <div class="quote-body">
+            <!-- Step 1 -->
+            <fieldset class="quote-step" data-step="1" style="border:0;margin:0;padding:0">
+              <legend><h2>What are you looking for?</h2></legend>
+              <p>Choose a division. You can describe the exact products in the next step.</p>
+              <div class="pick-grid">
+                <div class="pick"><input type="radio" name="division" id="d-auto" value="Auto Spare Parts"><label for="d-auto"><svg class="box-ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg><span><strong>Auto Spare Parts</strong><span>OEM &amp; genuine-equivalent</span></span></label></div>
+                <div class="pick"><input type="radio" name="division" id="d-bike" value="Electric Mountain Bikes"><label for="d-bike"><svg class="box-ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-7h6l2 7M10 9l3 7H6"/></svg><span><strong>Electric Mountain Bikes</strong><span>Branded, OEM &amp; private label</span></span></label></div>
+                <div class="pick"><input type="radio" name="division" id="d-tex" value="Nonwoven Fabric"><label for="d-tex"><svg class="box-ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="7" cy="12" rx="3" ry="7"/><path d="M7 5h13v14H7"/></svg><span><strong>Nonwoven Fabric</strong><span>PP spunbond, SMS &amp; more</span></span></label></div>
+                <div class="pick"><input type="radio" name="division" id="d-baby" value="Baby Care (coming soon)"><label for="d-baby"><svg class="box-ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M9 14c1.5 1.5 4.5 1.5 6 0"/><circle cx="9.5" cy="10.5" r=".8" fill="currentColor"/><circle cx="14.5" cy="10.5" r=".8" fill="currentColor"/></svg><span><strong>Baby Care</strong><span>Coming soon — register interest</span></span></label></div>
+                <div class="pick" style="grid-column:1/-1"><input type="radio" name="division" id="d-other" value="Other / General sourcing"><label for="d-other"><svg class="box-ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg><span><strong>Something else</strong><span>We source other products on request</span></span></label></div>
+              </div>
+              <p class="form-error" data-err="1"></p>
+              <div class="quote-nav"><span></span><button type="button" class="btn btn-dark" data-next>Continue <span class="arrow">→</span></button></div>
+            </fieldset>
+
+            <!-- Step 2 -->
+            <fieldset class="quote-step" data-step="2" hidden style="border:0;margin:0;padding:0">
+              <legend><h2>Order details</h2></legend>
+              <p data-hint>Part numbers, specifications or a product description all help.</p>
+              <div class="field">
+                <label for="q-desc">Products &amp; specifications *</label>
+                <textarea id="q-desc" name="desc" required placeholder="e.g. Brake pads for Toyota Hilux 2018–2022, OEM 04465-0K360"></textarea>
+              </div>
+              <div class="field-row" style="grid-template-columns:1fr 1fr">
+                <div class="field"><label for="q-qty">Quantity *</label><input id="q-qty" name="qty" required placeholder="e.g. 500 sets / 1×40ft HC"></div>
+                <div class="field"><label for="q-dest">Destination country / port *</label><input id="q-dest" name="dest" required placeholder="e.g. Mombasa, Kenya"></div>
+              </div>
+              <div class="field-row" style="grid-template-columns:1fr 1fr">
+                <div class="field">
+                  <label for="q-inco">Preferred Incoterm</label>
+                  <select id="q-inco" name="inco">
+                    <option value="Not sure — please advise">Not sure — please advise</option>
+                    <option>EXW</option><option>FOB</option><option>CFR</option><option>CIF</option><option>DDP</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="q-time">Timeline</label>
+                  <select id="q-time" name="time">
+                    <option>Ready to order now</option>
+                    <option>Within 1–3 months</option>
+                    <option>Planning / price check</option>
+                  </select>
+                </div>
+              </div>
+              <p class="form-error" data-err="2"></p>
+              <div class="quote-nav"><button type="button" class="btn btn-outline" data-prev>← Back</button><button type="button" class="btn btn-dark" data-next>Continue <span class="arrow">→</span></button></div>
+            </fieldset>
+
+            <!-- Step 3 -->
+            <fieldset class="quote-step" data-step="3" hidden style="border:0;margin:0;padding:0">
+              <legend><h2>Your details</h2></legend>
+              <div class="field-row" style="grid-template-columns:1fr 1fr">
+                <div class="field"><label for="q-name">Your name *</label><input id="q-name" name="name" required autocomplete="name"></div>
+                <div class="field"><label for="q-co">Company</label><input id="q-co" name="company" autocomplete="organization"></div>
+              </div>
+              <div class="field-row" style="grid-template-columns:1fr 1fr">
+                <div class="field"><label for="q-email">Email *</label><input id="q-email" name="email" type="email" required autocomplete="email"></div>
+                <div class="field"><label for="q-phone">Phone / WhatsApp</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
+              </div>
+              <p class="mono" style="color:var(--ink-soft);margin:6px 0 0">Your request</p>
+              <div class="summary" id="q-summary"></div>
+              <p class="form-error" data-err="3"></p>
+              <div class="quote-nav">
+                <button type="button" class="btn btn-outline" data-prev>← Back</button>
+                <span style="display:flex;gap:10px;flex-wrap:wrap">
+                  <button type="button" class="btn btn-outline" data-send="wa">Send via WhatsApp</button>
+                  <button type="submit" class="btn btn-primary">Send by email <span class="arrow">→</span></button>
+                </span>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+
+        <aside class="contact-card">
+          <h3>Talk to us directly</h3>
+          <div class="contact-line">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <div><span class="mono">Email</span><a href="mailto:globallynkllc@gmail.com">globallynkllc@gmail.com</a><button class="copy-btn" type="button" data-copy="globallynkllc@gmail.com">Copy</button></div>
+          </div>
+          <div class="contact-line">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-3 2a11 11 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span>
+            <div><span class="mono">Phone &amp; WhatsApp</span><a href="tel:+15572431736">+1 (557) 243-1736</a><button class="copy-btn" type="button" data-copy="+15572431736">Copy</button></div>
+          </div>
+          <div class="contact-line">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div><span class="mono">Registered office</span><p>GlobalLynk LLC<br>30 N Gould St, Ste N<br>Sheridan, WY 82801, USA</p></div>
+          </div>
+          <div class="clock" data-clock>
+            Our time (US Mountain): <strong data-clock-time>--:--</strong><br>
+            <span data-clock-note style="color:rgba(255,255,255,.6)"></span>
+          </div>
+          <a href="https://wa.me/15572431736" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:20px;width:100%;justify-content:center">Chat on WhatsApp</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-mark">GL</span><span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span></a>
+        <p>International general trading — linking manufacturers with buyers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
+          <li><a href="products.html#textiles">Nonwoven Textiles</a></li>
+          <li><a href="products.html#baby">Baby Care</a></li>
+          <li><a href="markets.html">Markets &amp; Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:globallynkllc@gmail.com">globallynkllc@gmail.com</a></p>
+        <p><a href="tel:+15572431736">+1 (557) 243-1736</a></p>
+        <p><a href="https://wa.me/15572431736" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Registered office</h4>
+        <p>GlobalLynk LLC<br>30 N Gould St, Ste N<br>Sheridan, WY 82801<br>United States</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year>2026</span> GlobalLynk LLC. All rights reserved.</p>
+      <p>Linking Global Trade</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

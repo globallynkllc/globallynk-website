@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markets &amp; Logistics | GlobalLynk LLC</title>
+  <meta name="description" content="Where GlobalLynk trades: sourcing origins, buyer markets across six continents, indicative transit times, Incoterms, payment terms, export documentation and quality control." />
+  <meta name="theme-color" content="#0B1830" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
+        <span class="logo-mark">GL</span>
+        <span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="markets.html" aria-current="page">Markets &amp; Logistics</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Markets &amp; Logistics</p>
+        <h1>We source globally and deliver wherever you are.</h1>
+        <p>GlobalLynk buys from manufacturers across Asia, Europe and the Americas and ships to buyers on every inhabited continent — by sea, air or multimodal, on the trade terms that suit you.</p>
+        <nav class="subnav" aria-label="On this page">
+          <a href="#markets">Where we trade</a>
+          <a href="#transit">Transit times</a>
+          <a href="#terms">Trade terms</a>
+          <a href="#quality">Quality &amp; documents</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Market explorer -->
+    <section id="markets" class="section section-dark" style="overflow:hidden">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Where we trade</p>
+            <h2>Pick a region.</h2>
+          </div>
+          <p class="section-lede">Select a region to spin the globe to it and see the countries we serve there. Not on the list? We probably still ship there — just ask.</p>
+        </div>
+
+        <div class="market-explorer">
+          <div class="market-globe">
+            <canvas id="globe" data-mode="markets" aria-label="Globe that rotates to the selected market region" role="img"></canvas>
+          </div>
+          <div class="market-side">
+            <div class="region-list" role="tablist" aria-label="Regions">
+              <button class="region-btn" role="tab" aria-selected="true" data-region="na">North America</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="la">Latin America &amp; Caribbean</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="eu">Europe</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="me">Middle East &amp; GCC</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="af">Africa</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="cis">CIS &amp; Central Asia</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="sa">South &amp; Southeast Asia</button>
+              <button class="region-btn" role="tab" aria-selected="false" data-region="oc">Oceania</button>
+              <button class="region-btn region-src" role="tab" aria-selected="false" data-region="src">Sourcing origins</button>
+            </div>
+            <div class="region-card" role="tabpanel" aria-live="polite">
+              <span class="mono region-kicker" data-r="kicker"></span>
+              <h3 data-r="title"></h3>
+              <p data-r="text"></p>
+              <div class="country-list" data-r="countries"></div>
+              <p class="mono region-lines" data-r="lines"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transit -->
+    <section id="transit" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Tool · Transit time lookup</p>
+            <h2>How long will it take?</h2>
+          </div>
+          <p class="section-lede">Choose where the goods are made and where they're going to see indicative port-to-port sea freight times. Air freight typically takes 2–6 days door to door.</p>
+        </div>
+
+        <div class="transit reveal" data-transit>
+          <div class="transit-controls">
+            <div class="field">
+              <label for="tr-from">Shipping from</label>
+              <select id="tr-from">
+                <option value="cn">China &amp; East Asia</option>
+                <option value="in">India &amp; South Asia</option>
+                <option value="eu">Europe &amp; Türkiye</option>
+                <option value="us">United States</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="tr-to">Shipping to</label>
+              <select id="tr-to">
+                <option value="usw">USA / Canada — West Coast</option>
+                <option value="use">USA / Canada — East &amp; Gulf Coast</option>
+                <option value="law">Latin America — Pacific coast</option>
+                <option value="lae">Latin America — Atlantic &amp; Caribbean</option>
+                <option value="eun">Northern Europe</option>
+                <option value="gcc">Middle East &amp; GCC</option>
+                <option value="eaf">East Africa</option>
+                <option value="waf">West Africa</option>
+                <option value="sas">South Asia</option>
+                <option value="sea">Southeast Asia</option>
+                <option value="oce">Australia &amp; New Zealand</option>
+              </select>
+            </div>
+          </div>
+          <div class="transit-result" aria-live="polite">
+            <div class="transit-route">
+              <span class="mono" data-t="from"></span>
+              <div class="transit-track"><span class="ship" aria-hidden="true">
+                <svg width="34" height="20" viewBox="0 0 34 20" fill="currentColor"><path d="M2 12h30l-4 7H6z"/><rect x="8" y="5" width="6" height="6"/><rect x="15" y="5" width="6" height="6"/><rect x="15" y="0" width="6" height="4.5"/><rect x="22" y="5" width="4" height="6"/></svg>
+              </span></div>
+              <span class="mono" data-t="to"></span>
+            </div>
+            <div class="transit-numbers">
+              <div><span class="mono">Sea freight (port to port)</span><strong data-t="sea"></strong></div>
+              <div><span class="mono">Air freight</span><strong data-t="air"></strong></div>
+            </div>
+            <p class="planner-note" style="margin-top:12px">Indicative only. Actual times depend on carrier, routing, transshipment and port congestion. Add time for inland haulage and customs clearance. We confirm the schedule with every quote.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms -->
+    <section id="terms" class="section section-dark">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Trade terms</p>
+            <h2>Your Incoterms. Your payment terms.</h2>
+          </div>
+          <p class="section-lede">Hover or tap a term to see what it means. We agree terms per order based on your preference and our relationship stage.</p>
+        </div>
+        <div class="terms-grid reveal">
+          <div class="terms-card">
+            <p class="mono" style="color:var(--brass-light)">Incoterms</p>
+            <h3>Delivery terms</h3>
+            <p>From collection at the factory to delivery at your door, duties paid.</p>
+            <div class="pills">
+              <span class="pill" tabindex="0" data-tip="Ex Works — you collect from the supplier's premises and handle everything after.">EXW</span>
+              <span class="pill" tabindex="0" data-tip="Free On Board — we deliver the goods on board the vessel at the port of origin.">FOB</span>
+              <span class="pill" tabindex="0" data-tip="Cost and Freight — we pay freight to your port; risk passes to you at loading.">CFR</span>
+              <span class="pill" tabindex="0" data-tip="Cost, Insurance and Freight — as CFR, plus we arrange cargo insurance.">CIF</span>
+              <span class="pill" tabindex="0" data-tip="Delivered Duty Paid — we deliver to your address with import duties paid (select markets).">DDP</span>
+            </div>
+          </div>
+          <div class="terms-card">
+            <p class="mono" style="color:var(--brass-light)">Payment</p>
+            <h3>Payment terms</h3>
+            <p>First orders typically 30% advance and 70% against copy of the bill of lading. Flexible terms for established accounts.</p>
+            <div class="pills">
+              <span class="pill" tabindex="0" data-tip="Telegraphic Transfer — direct bank wire.">T/T</span>
+              <span class="pill" tabindex="0" data-tip="Letter of Credit at sight — your bank guarantees payment against compliant documents.">LC at sight</span>
+              <span class="pill" tabindex="0" data-tip="Documents against Payment — shipping documents are released through the banks once you pay.">D/P</span>
+            </div>
+          </div>
+          <div class="terms-card">
+            <p class="mono" style="color:var(--brass-light)">Shipment</p>
+            <h3>Freight modes</h3>
+            <p>Full containers, shared containers or air — including mixed-product containers.</p>
+            <div class="pills">
+              <span class="pill" tabindex="0" data-tip="Full Container Load — a whole 20ft, 40ft or 40ft High Cube container for your goods.">FCL</span>
+              <span class="pill" tabindex="0" data-tip="Less than Container Load — your goods share a container, so you pay for the space used.">LCL</span>
+              <span class="pill" tabindex="0" data-tip="Fastest option for urgent or high-value, low-volume goods.">Air</span>
+              <span class="pill" tabindex="0" data-tip="Sea plus rail or road, for landlocked destinations.">Multimodal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section id="quality" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Quality &amp; documents</p>
+            <h2>Five checks before anything ships.</h2>
+          </div>
+          <p class="section-lede">Every order goes through the same quality-control process, and ships with a complete, checked document set.</p>
+        </div>
+
+        <div class="qc reveal">
+          <details open><summary><span class="mono">Stage 01</span>Supplier qualification</summary><p>Background verification, authorization checks, factory capability assessment, reference checks and sample evaluation before the first bulk order.</p></details>
+          <details><summary><span class="mono">Stage 02</span>Order-level verification</summary><p>Part-number and specification cross-check, visual inspection, random sampling for dimensional and functional checks, and quantity reconciliation.</p></details>
+          <details><summary><span class="mono">Stage 03</span>Pre-shipment inspection</summary><p>Full carton count, packing-list verification, product condition check, labeling accuracy and photographs for your review.</p></details>
+          <details><summary><span class="mono">Stage 04</span>Third-party inspection</summary><p>Buyer-appointed inspections are welcome. We coordinate with SGS, Bureau Veritas, TÜV, Intertek and others before loading.</p></details>
+          <details><summary><span class="mono">Stage 05</span>Documentation review</summary><p>All export documents checked for accuracy, HS codes verified, and the full set cross-checked against your LC or import requirements.</p></details>
+        </div>
+
+        <div class="split" style="margin-top:56px">
+          <div class="reveal">
+            <p class="eyebrow">Standard document set</p>
+            <table class="spec-table">
+              <tr><th>Commercial invoice</th><td>With HS codes and full item description</td></tr>
+              <tr><th>Packing list</th><td>Carton-level detail, weights and dimensions</td></tr>
+              <tr><th>Certificate of origin</th><td>Issued by the relevant chamber of commerce</td></tr>
+              <tr><th>Bill of lading / air waybill</th><td>Original, telex release or sea waybill</td></tr>
+              <tr><th>Inspection reports</th><td>Our pre-shipment report, plus third-party if requested</td></tr>
+            </table>
+          </div>
+          <div class="reveal" data-delay="1">
+            <p class="eyebrow">Product-specific</p>
+            <table class="spec-table">
+              <tr><th>E-bikes &amp; batteries</th><td>UN 38.3 test summary, MSDS, DG declaration, CE Declaration of Conformity (EU)</td></tr>
+              <tr><th>Auto parts</th><td>Original part numbers and packaging, traceability to production origin</td></tr>
+              <tr><th>Nonwoven fabric</th><td>Technical data sheet, test reports (GSM, tensile strength) on request</td></tr>
+              <tr><th>Any product</th><td>Destination-specific certificates arranged on request</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="cta-band reveal" style="margin-top:72px">
+          <div>
+            <h2>Need a landed-cost estimate?</h2>
+            <p>Tell us the product, quantity and destination port. We'll quote the goods and the freight together.</p>
+          </div>
+          <div class="actions">
+            <a href="contact.html" class="btn btn-dark">Request a quote with logistics <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-mark">GL</span><span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span></a>
+        <p>International general trading — linking manufacturers with buyers worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
+          <li><a href="products.html#textiles">Nonwoven Textiles</a></li>
+          <li><a href="products.html#baby">Baby Care</a></li>
+          <li><a href="markets.html">Markets &amp; Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:globallynkllc@gmail.com">globallynkllc@gmail.com</a></p>
+        <p><a href="tel:+15572431736">+1 (557) 243-1736</a></p>
+        <p><a href="https://wa.me/15572431736" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Registered office</h4>
+        <p>GlobalLynk LLC<br>30 N Gould St, Ste N<br>Sheridan, WY 82801<br>United States</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year>2026</span> GlobalLynk LLC. All rights reserved.</p>
+      <p>Linking Global Trade</p>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/15572431736" target="_blank" rel="noopener" aria-label="Chat with GlobalLynk on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/></svg>
+  </a>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
