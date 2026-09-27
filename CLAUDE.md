@@ -31,6 +31,8 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 - **Team:** Jyoti Adkuloo — Founder; Dheeraj Adkuloo — Managing Director
   ("Meet the team" in the About section of index.html; initials medallions until photos arrive).
 - **Email:** globallynkllc@gmail.com · **Phone/WhatsApp:** +1 (557) 243-1736 (`wa.me/15572431736`)
+- **Business model:** GlobalLynk does NOT manufacture or produce anything. It sources
+  from suppliers and ships to buyers. Never write "we produce", "our mill", "made by us", etc.
 - **Focus:** Nonwoven fabric is the ONLY active line — lead with it everywhere.
   Types: PP spunbond (S/SS/SSS), SMS/SMMS, meltblown, needle punched, spunlace,
   laminated, specialty treated, printed/perforated, plus finished nonwoven goods.
