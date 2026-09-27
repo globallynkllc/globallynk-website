@@ -64,6 +64,9 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 - **Contrast:** `--gold` (#7E5F2D) is the text-safe gold (4.5:1 on ivory) — use it for any
   gold TEXT. `--gold-mid` / `--gold-light` / `--gold-glow` are for borders, fills and
   large decorative marks only. White text on navy should be at least .62 opacity.
+- **Primary buttons (`.btn-primary`):** navy with gold text on light backgrounds; gold with
+  navy text inside navy areas (`.section-dark`, `.fx-panel`, `.reg-card`, `.gsm`, footer).
+  Add new dark containers to that selector list in styles.css.
 - **Names/people:** set in Inter 600 (`.person h3`), not Fraunces.
 - **Type:** Fraunces (headings), Inter (body, and the "GlobalLynk" wordmark),
   JetBrains Mono (labels/eyebrows). Google Fonts in each page `<head>`.
