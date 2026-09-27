@@ -1,0 +1,5 @@
+# GitHub Pages: keep repo-only files off the public website
+exclude:
+  - README.md
+  - serve.py
+  - tools/
