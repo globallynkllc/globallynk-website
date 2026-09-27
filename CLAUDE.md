@@ -61,6 +61,10 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
   for headings, dark sections, footer, dark buttons and the globe; steel
   `#2E4A73` as a minor accent. Taupe `#4A4238` is only for the wordmark.
   Avoid drifting back to an all-brown palette.
+- **Contrast:** `--gold` (#7E5F2D) is the text-safe gold (4.5:1 on ivory) — use it for any
+  gold TEXT. `--gold-mid` / `--gold-light` / `--gold-glow` are for borders, fills and
+  large decorative marks only. White text on navy should be at least .62 opacity.
+- **Names/people:** set in Inter 600 (`.person h3`), not Fraunces.
 - **Type:** Fraunces (headings), Inter (body, and the "GlobalLynk" wordmark),
   JetBrains Mono (labels/eyebrows). Google Fonts in each page `<head>`.
 - **Icons:** gold medallion circles (`.medal`, `.fact-icon`) as on the card.
