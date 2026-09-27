@@ -481,6 +481,53 @@ a:hover { text-decoration: underline; }
 .fact .mono { color: var(--ink-soft); font-size: 0.66rem; }
 .fact strong { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--espresso); }
 
+/* ---------- Team ---------- */
+.team-head { margin: 88px 0 28px; padding-top: 56px; border-top: 1px solid var(--line); }
+.team-head h2 { margin: 0; }
+.team { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.person {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s var(--ease), border-color .3s, box-shadow .3s;
+}
+.person::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  background: var(--metal);
+}
+.person:hover { transform: translateY(-4px); border-color: var(--gold-light); box-shadow: 0 18px 36px -24px rgba(18,35,63,.45); }
+/* Initials medallion; swap for <img class="person-mark"> when photos are ready */
+.person-mark {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  object-fit: cover;
+  background: radial-gradient(circle at 35% 30%, #F1E2C0, #C9A96E 60%, #A8844E);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.7), inset 0 -3px 5px rgba(0,0,0,.12), 0 6px 14px -6px rgba(18,35,63,.45);
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--espresso);
+  letter-spacing: .02em;
+  outline: 1px solid rgba(168,132,78,.45);
+  outline-offset: 4px;
+}
+.person h3 { font-size: 1.35rem; margin: 4px 0 2px; }
+.person .mono { color: var(--gold); margin: 0 0 12px; }
+.person p { color: var(--ink-soft); font-size: .94rem; }
+.person a { font-weight: 600; font-size: .9rem; }
+
 /* ---------- Process ---------- */
 .process {
   display: grid;
@@ -1523,7 +1570,7 @@ a:hover { text-decoration: underline; }
   .fx-tab { flex: 0 0 auto; }
   .fx-panel { grid-template-columns: 1fr; }
   .fx-stage { min-height: 240px; }
-  .portfolio { grid-template-columns: 1fr; }
+  .portfolio, .team { grid-template-columns: 1fr; }
   .market-globe { max-width: 420px; }
   .qc { grid-template-columns: 1fr 1fr; }
 }
@@ -1572,4 +1619,6 @@ a:hover { text-decoration: underline; }
   .transit-route { grid-template-columns: 1fr; }
   .transit-route .mono:last-child { text-align: left; }
   .logo-text { font-size: 1.05rem; }
+  .person { grid-template-columns: 1fr; padding: 24px 20px; }
+  .person-mark { width: 76px; height: 76px; font-size: 1.6rem; }
 }

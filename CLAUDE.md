@@ -28,6 +28,8 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 
 - **Legal name:** GlobalLynk LLC — motto "Linking Global Trade"
 - **Registered address:** 30 N Gould St, Ste N, Sheridan, WY 82801, USA
+- **Team:** Jyoti Adkuloo — Founder; Dheeraj Adkuloo — Managing Director
+  ("Meet the team" in the About section of index.html; initials medallions until photos arrive).
 - **Email:** globallynkllc@gmail.com · **Phone/WhatsApp:** +1 (557) 243-1736 (`wa.me/15572431736`)
 - **Focus:** Nonwoven fabric is the ONLY active line — lead with it everywhere.
   Types: PP spunbond (S/SS/SSS), SMS/SMMS, meltblown, needle punched, spunlace,
