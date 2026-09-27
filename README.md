@@ -2,7 +2,7 @@
 
 Website for GlobalLynk LLC, an international general trading company (Sheridan, Wyoming, USA).
 
-**Live site:** https://globallynkllc.github.io/globallynk-website/
+**Live site:** https://globallynkllc.com
 
 Plain HTML, CSS and JavaScript — no build step.
 

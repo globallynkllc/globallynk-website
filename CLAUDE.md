@@ -93,8 +93,14 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 
 ## Deployment
 
-**Live:** https://globallynkllc.github.io/globallynk-website/ — GitHub Pages,
-deployed automatically from `main` (repo root) on every push; takes ~1 minute.
+**Live:** https://globallynkllc.com — GitHub Pages with a custom domain, deployed
+automatically from `main` (repo root) on every push (~1 minute). The `CNAME` file
+in the repo root holds the domain; don't delete it. Old URL
+globallynkllc.github.io/globallynk-website redirects here.
+
+DNS is managed at the registered agent (nameservers NS1/NS2.HOSTING.BUSINESSIDENTITY.LLC):
+- `@` A → 185.199.108.153 (GitHub Pages; .109/.110/.111 can be added as backups)
+- `www` CNAME → globallynkllc.github.io
+- Keep MX, TXT (SPF/DKIM/DMARC/_acme-challenge), `mail` and `*` records — they run email.
+
 Repo: `github.com/globallynkllc/globallynk-website` (public — required for free Pages).
-All links are relative, so the site works under the `/globallynk-website/` subpath
-and will keep working if a custom domain is added later (Settings → Pages).
