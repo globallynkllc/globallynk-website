@@ -600,7 +600,16 @@ a:hover { text-decoration: underline; }
   color: var(--espresso);
   margin: 6px 0 4px;
 }
-.person .mono { color: var(--gold); font-size: .7rem; letter-spacing: .14em; margin: 0 0 14px; }
+/* Role line (e.g. "Founder") — plain readable text under the name */
+.person .mono {
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: .98rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
 .person p { color: var(--ink-soft); font-size: .94rem; line-height: 1.6; }
 .person a { font-weight: 600; font-size: .9rem; }
 .person-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: auto; padding-top: 6px; }
