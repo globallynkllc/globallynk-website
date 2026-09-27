@@ -62,7 +62,7 @@
   /* ---------- Hero word rotator ---------- */
   var rot = $(".rotator");
   if (rot && !reduceMotion) {
-    var words = rot.getAttribute("data-words").split("|"), wi = words.length - 1;
+    var words = rot.getAttribute("data-words").split("|"), wi = 0;
     setInterval(function () {
       wi = (wi + 1) % words.length;
       rot.innerHTML = '<span class="word">' + words[wi] + "</span>";
