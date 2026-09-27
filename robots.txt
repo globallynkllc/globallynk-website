@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://globallynkllc.com/sitemap.xml

@@ -22,11 +22,16 @@ serve.py       -- Local preview server with clean URLs (python serve.py 8000)
 logo-mark.svg  -- GL monogram with orbit arc (from the business card)
 favicon.svg
 CNAME          -- custom domain for GitHub Pages; don't delete
+sitemap.xml    -- list of page URLs for Google (update when adding a page; bump <lastmod> on big changes)
+robots.txt     -- allows all crawlers, points to the sitemap
 ```
 
 **Clean URLs:** link internally as `/`, `/products`, `/about#team`, `/contact?division=textile`
 — never `something.html`. GitHub Pages serves `/products` from `products.html`.
 Local preview must use `python serve.py` (plain `http.server` can't resolve clean URLs).
+
+**SEO:** each page has `<link rel="canonical">` with its clean URL. A new page needs one, plus a
+sitemap.xml entry. The domain is verified in Google Search Console (TXT record at the registrar).
 
 **Nav:** each page has the same `<nav class="site-nav">` with dropdowns (`.nav-item` >
 `.nav-link` + `.nav-caret` + `.dropdown`); only `aria-current` differs. When adding a page,
