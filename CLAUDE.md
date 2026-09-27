@@ -18,6 +18,10 @@ markets.html   -- Region explorer globe, transit lookup, container load planner,
 contact.html   -- 3-step quote builder (sends via mailto: or WhatsApp — nothing stored)
 styles.css     -- All styles
 main.js        -- All interactions (vanilla JS IIFE, no dependencies)
+nonwoven/*.html -- 8 fabric guide pages (/nonwoven/pp-spunbond etc.) — GENERATED, don't hand-edit
+tools/fabrics.py -- fabric page data + generator: edit data there, then `python tools/fabrics.py`
+                  (re-run after changing header/footer in products.html too)
+og-image.png   -- 1200x630 link-preview image (WhatsApp/LinkedIn); logo-512.png -- logo for Google
 serve.py       -- Local preview server with clean URLs (python serve.py 8000)
 logo-mark.svg  -- GL monogram with orbit arc (from the business card)
 favicon.svg
@@ -30,7 +34,11 @@ robots.txt     -- allows all crawlers, points to the sitemap
 — never `something.html`. GitHub Pages serves `/products` from `products.html`.
 Local preview must use `python serve.py` (plain `http.server` can't resolve clean URLs).
 
-**SEO:** each page has `<link rel="canonical">` with its clean URL. A new page needs one, plus a
+**SEO:** titles/descriptions use buyer search terms ("nonwoven fabric supplier", fabric names).
+Fabric pages list other-language names (tela no tejida, TNT, friselina, manta térmica…) under
+"Also known as" — keep those accurate. index.html has Organization JSON-LD; fabric pages have
+BreadcrumbList + FAQPage JSON-LD. Every page has Open Graph tags pointing at og-image.png.
+Each page has `<link rel="canonical">` with its clean URL. A new page needs one, plus a
 sitemap.xml entry. The domain is verified in Google Search Console (TXT record at the registrar).
 
 **Nav:** each page has the same `<nav class="site-nav">` with dropdowns (`.nav-item` >

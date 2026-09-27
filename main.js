@@ -522,14 +522,14 @@
 
   /* ---------- Nonwoven fabric explorer (home) ---------- */
   var FABRICS = {
-    spunbond: { k: "Most versatile", t: "PP Spunbond", s: "Continuous filaments, thermally bonded", x: "Polypropylene filaments laid into a web and heat-bonded. Strong, light, breathable and cost-effective — the workhorse of the nonwoven world, available in single, double or triple beam (S, SS, SSS).", gsm: "10–200 gsm", w: "Up to 3.2m", m: "100% polypropylene", p: "Strength-to-weight", u: ["Shopping bags", "Furniture & mattresses", "Crop covers", "Hygiene", "Tablecloths", "Packaging"] },
-    sms: { k: "Barrier fabric", t: "SMS / SMMS", s: "Spunbond + meltblown + spunbond layers", x: "A meltblown barrier layer sandwiched between spunbond layers. Breathable, but resists fluids and bacteria, which makes it the standard for disposable medical wear.", gsm: "15–80 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Fluid & bacterial barrier", u: ["Surgical gowns", "Drapes", "Caps", "Protective clothing", "Hygiene leg cuffs"] },
-    meltblown: { k: "Filtration grade", t: "Meltblown", s: "Ultra-fine microfiber web", x: "Extremely fine fibers blown into a dense, random web. The fine structure traps particles, which is why meltblown is used as the filter layer in masks and air or liquid filters.", gsm: "15–100 gsm", w: "Up to 1.6m", m: "Polypropylene", p: "High filtration", u: ["Mask filter layer", "Air filters", "Liquid filtration", "Oil absorbents", "Insulation"] },
-    needle: { k: "Heavy duty", t: "Needle Punched", s: "Fibers mechanically interlocked by needles", x: "Staple fibers entangled by barbed needles into a dense, felt-like fabric. Tough, thick and dimensionally stable.", gsm: "80–1,000 gsm", w: "Up to 4m+", m: "Polyester (PET) or PP", p: "Durability & bulk", u: ["Geotextiles", "Carpet backing", "Automotive interiors", "Mattress padding", "Felt"] },
-    spunlace: { k: "Soft & absorbent", t: "Spunlace", s: "Fibers entangled by water jets", x: "High-pressure water jets entangle the fibers, giving a soft, cloth-like fabric with no binders. Absorbent and gentle on skin.", gsm: "30–120 gsm", w: "Up to 3.4m", m: "Viscose / polyester blends", p: "Softness & absorbency", u: ["Wet wipes", "Baby wipes", "Cosmetic pads", "Cleaning cloths", "Towels"] },
-    laminated: { k: "Waterproof", t: "Laminated Nonwoven", s: "Nonwoven bonded to film or woven", x: "Nonwoven laminated with PE film, BOPP or woven raffia for a waterproof, printable, tougher fabric.", gsm: "40–150 gsm", w: "Up to 3.2m", m: "PP + PE / BOPP / raffia", p: "Waterproof", u: ["Protective gowns", "Laminated bags", "Mattress protectors", "Roofing underlay", "Packaging"] },
-    treated: { k: "Performance finishes", t: "Specialty Treated", s: "Spunbond with functional treatment", x: "Spunbond fabric finished for a specific job: hydrophilic for hygiene topsheets, UV-stabilized for outdoor use, flame-retardant for furniture, anti-static, anti-slip, antibacterial or super soft.", gsm: "10–200 gsm", w: "Up to 3.2m", m: "Polypropylene + additives", p: "Built for purpose", u: ["Hygiene topsheets", "UV crop covers", "FR upholstery", "Anti-slip backing", "Electronics packing"] },
-    printed: { k: "Custom finish", t: "Printed & Perforated", s: "Spunbond with print or perforation", x: "Your pattern, brand or logo printed on the roll, or precision perforations for tearing and airflow. Popular for tableware and gift wrap.", gsm: "25–120 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Your design", u: ["Printed tablecloths", "Flower wrapping", "Branded bags", "Place mats", "Hygiene"] }
+    spunbond: { g: "pp-spunbond", k: "Most versatile", t: "PP Spunbond", s: "Continuous filaments, thermally bonded", x: "Polypropylene filaments laid into a web and heat-bonded. Strong, light, breathable and cost-effective — the workhorse of the nonwoven world, available in single, double or triple beam (S, SS, SSS).", gsm: "10–200 gsm", w: "Up to 3.2m", m: "100% polypropylene", p: "Strength-to-weight", u: ["Shopping bags", "Furniture & mattresses", "Crop covers", "Hygiene", "Tablecloths", "Packaging"] },
+    sms: { g: "sms", k: "Barrier fabric", t: "SMS / SMMS", s: "Spunbond + meltblown + spunbond layers", x: "A meltblown barrier layer sandwiched between spunbond layers. Breathable, but resists fluids and bacteria, which makes it the standard for disposable medical wear.", gsm: "15–80 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Fluid & bacterial barrier", u: ["Surgical gowns", "Drapes", "Caps", "Protective clothing", "Hygiene leg cuffs"] },
+    meltblown: { g: "meltblown", k: "Filtration grade", t: "Meltblown", s: "Ultra-fine microfiber web", x: "Extremely fine fibers blown into a dense, random web. The fine structure traps particles, which is why meltblown is used as the filter layer in masks and air or liquid filters.", gsm: "15–100 gsm", w: "Up to 1.6m", m: "Polypropylene", p: "High filtration", u: ["Mask filter layer", "Air filters", "Liquid filtration", "Oil absorbents", "Insulation"] },
+    needle: { g: "needle-punched", k: "Heavy duty", t: "Needle Punched", s: "Fibers mechanically interlocked by needles", x: "Staple fibers entangled by barbed needles into a dense, felt-like fabric. Tough, thick and dimensionally stable.", gsm: "80–1,000 gsm", w: "Up to 4m+", m: "Polyester (PET) or PP", p: "Durability & bulk", u: ["Geotextiles", "Carpet backing", "Automotive interiors", "Mattress padding", "Felt"] },
+    spunlace: { g: "spunlace", k: "Soft & absorbent", t: "Spunlace", s: "Fibers entangled by water jets", x: "High-pressure water jets entangle the fibers, giving a soft, cloth-like fabric with no binders. Absorbent and gentle on skin.", gsm: "30–120 gsm", w: "Up to 3.4m", m: "Viscose / polyester blends", p: "Softness & absorbency", u: ["Wet wipes", "Baby wipes", "Cosmetic pads", "Cleaning cloths", "Towels"] },
+    laminated: { g: "laminated", k: "Waterproof", t: "Laminated Nonwoven", s: "Nonwoven bonded to film or woven", x: "Nonwoven laminated with PE film, BOPP or woven raffia for a waterproof, printable, tougher fabric.", gsm: "40–150 gsm", w: "Up to 3.2m", m: "PP + PE / BOPP / raffia", p: "Waterproof", u: ["Protective gowns", "Laminated bags", "Mattress protectors", "Roofing underlay", "Packaging"] },
+    treated: { g: "specialty-treated", k: "Performance finishes", t: "Specialty Treated", s: "Spunbond with functional treatment", x: "Spunbond fabric finished for a specific job: hydrophilic for hygiene topsheets, UV-stabilized for outdoor use, flame-retardant for furniture, anti-static, anti-slip, antibacterial or super soft.", gsm: "10–200 gsm", w: "Up to 3.2m", m: "Polypropylene + additives", p: "Built for purpose", u: ["Hygiene topsheets", "UV crop covers", "FR upholstery", "Anti-slip backing", "Electronics packing"] },
+    printed: { g: "printed-perforated", k: "Custom finish", t: "Printed & Perforated", s: "Spunbond with print or perforation", x: "Your pattern, brand or logo printed on the roll, or precision perforations for tearing and airflow. Popular for tableware and gift wrap.", gsm: "25–120 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Your design", u: ["Printed tablecloths", "Flower wrapping", "Branded bags", "Place mats", "Hygiene"] }
   };
   var fx = $(".fx");
   if (fx) {
@@ -552,6 +552,9 @@
       $('[data-fx="width"]', fx).textContent = f.w;
       $('[data-fx="material"]', fx).textContent = f.m;
       $('[data-fx="prop"]', fx).textContent = f.p;
+      var guide = $('[data-fx="guide"]', fx), quoteBtn = $('[data-fx="quote"]', fx);
+      if (guide) { guide.href = "/nonwoven/" + f.g; guide.textContent = f.t + " specs & FAQ →"; }
+      if (quoteBtn) quoteBtn.href = "/contact?division=textile&fabric=" + encodeURIComponent(f.t);
       $('[data-fx="uses"]', fx).innerHTML = f.u.map(function (u) { return "<span>" + u + "</span>"; }).join("");
       body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
     };
@@ -795,6 +798,12 @@
     var params = new URLSearchParams(location.search);
     var preset = { auto: "d-auto", bike: "d-bike", textile: "d-tex", baby: "d-baby", other: "d-other" }[params.get("division")];
     if (preset) $("#" + preset).checked = true;
+    // ?fabric=PP%20Spunbond (from fabric pages) starts the description for the buyer
+    var fabricParam = (params.get("fabric") || "").slice(0, 60);
+    if (fabricParam) {
+      if (!preset) $("#d-tex").checked = true;
+      $("#q-desc").value = fabricParam + " nonwoven fabric\nWeight (GSM): \nWidth: \nColor: \nTreatment: ";
+    }
 
     function val(name) { var el = form.elements[name]; return el ? (el.value || "").trim() : ""; }
     function division() { var c = $("input[name=division]:checked", form); return c ? c.value : ""; }

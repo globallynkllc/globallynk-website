@@ -1066,6 +1066,7 @@ a:hover { text-decoration: underline; }
   z-index: 0;
 }
 .app > * { position: relative; z-index: 1; }
+.app h3, .app p { padding-right: 44px; }
 .app h3 { font-size: 1rem; }
 .app p { font-size: 0.86rem; color: var(--ink-soft); margin: 0; }
 
@@ -1331,6 +1332,43 @@ a:hover { text-decoration: underline; }
 .finished h3 { font-size: .98rem; }
 .finished ul { margin: 0; padding-left: 16px; color: var(--ink-soft); font-size: .86rem; }
 .finished li { margin-bottom: 4px; }
+
+/* ---------- Fabric guide pages ---------- */
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .86rem; color: var(--ink-soft); margin-bottom: 18px; }
+.crumbs a { color: var(--gold); }
+.crumbs span[aria-hidden] { color: var(--line); }
+.aka { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; max-width: 760px; }
+.aka .mono { color: var(--umber); font-size: .66rem; margin-right: 4px; }
+.aka span:not(.mono) {
+  font-size: .82rem;
+  padding: 4px 11px;
+  border-radius: 100px;
+  background: rgba(250,247,242,.7);
+  border: 1px solid var(--line);
+  color: var(--espresso);
+}
+.guide-swatch {
+  height: 320px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: inset 0 -80px 80px -60px rgba(18,35,63,.25);
+}
+.guide-points { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+.guide-points li { display: flex; gap: 10px; align-items: center; color: var(--ink-soft); font-size: .95rem; }
+.guide-points svg { color: var(--ok); flex-shrink: 0; }
+.fab-grid.related { grid-template-columns: repeat(3, 1fr); margin-bottom: 72px; }
+a.fab-card { color: var(--ink); display: block; }
+a.fab-card:hover { text-decoration: none; }
+.guide-index { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.guide-index a { font-size: .9rem; font-weight: 500; }
+.fx-body .fx-actions { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.fx-body .fx-actions .btn { margin-top: 0; }
+.fx-guide { color: var(--gold-glow); font-weight: 600; font-size: .9rem; }
+.fx-guide:hover { color: #F1E2C0; }
+.guides-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -36px 0 64px; }
+.guides-row .mono { color: var(--umber); font-size: .66rem; margin-right: 6px; }
+.guides-row a { font-size: .86rem; font-weight: 500; padding: 6px 13px; border: 1px solid var(--line); border-radius: 100px; background: var(--paper); color: var(--espresso); }
+.guides-row a:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
 
 /* ---------- Markets page ---------- */
 .market-explorer { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
@@ -1670,7 +1708,7 @@ a:hover { text-decoration: underline; }
   .why-grid { grid-template-columns: 1fr 1fr; }
   .planner, .transit { grid-template-columns: 1fr; }
   .planner-inputs, .transit-controls { border-right: 0; border-bottom: 1px solid var(--line); }
-  .cat-grid, .fab-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid, .fab-grid, .fab-grid.related { grid-template-columns: repeat(2, 1fr); }
   .terms-grid, .app-grid, .finished { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .contact-card { position: static; }
@@ -1736,7 +1774,7 @@ a:hover { text-decoration: underline; }
   .container { padding: 0 16px; }
   .hero-grid { padding: 16px 16px 56px; }
   .section { padding: 72px 0; }
-  .portfolio, .process, .why-grid, .terms-grid, .app-grid, .cat-grid, .fab-grid, .finished, .type-grid, .pick-grid, .totals, .qc, .transit-numbers { grid-template-columns: 1fr; }
+  .portfolio, .process, .why-grid, .terms-grid, .app-grid, .cat-grid, .fab-grid, .fab-grid.related, .finished, .type-grid, .pick-grid, .totals, .qc, .transit-numbers { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr 1fr; }
   .fx-body { padding: 26px 20px; }
   .lens { width: 130px; height: 130px; }
@@ -1756,4 +1794,5 @@ a:hover { text-decoration: underline; }
   .logo-text { font-size: 1.05rem; }
   .person { grid-template-columns: 1fr; padding: 24px 20px; }
   .person-mark { width: 76px; height: 76px; font-size: 1.6rem; }
+  .guide-swatch { height: 200px; }
 }
