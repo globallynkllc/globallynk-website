@@ -11,12 +11,13 @@ step, no framework, no backend, no package.json.
 Pages (siblings in the repo root, sharing `styles.css` and `main.js`):
 
 ```
-index.html     -- Home: hero globe, about, division explorer, process, load planner
-products.html  -- Auto parts, e-MTBs, nonwoven textiles, baby care (coming soon)
+index.html     -- Home: hero globe, about, nonwoven fabric explorer, process, load planner, portfolio
+products.html  -- 01 Nonwoven fabrics, 02 e-MTBs, 03 auto parts, 04 baby products (coming soon)
 markets.html   -- Markets & logistics: region explorer globe, transit lookup, terms, QC
 contact.html   -- 3-step quote builder (sends via mailto: or WhatsApp — nothing stored)
 styles.css     -- All styles
 main.js        -- All interactions (vanilla JS IIFE, no dependencies)
+logo-mark.svg  -- GL monogram with orbit arc (from the business card)
 favicon.svg
 ```
 
@@ -28,9 +29,16 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 - **Legal name:** GlobalLynk LLC — motto "Linking Global Trade"
 - **Registered address:** 30 N Gould St, Ste N, Sheridan, WY 82801, USA
 - **Email:** globallynkllc@gmail.com · **Phone/WhatsApp:** +1 (557) 243-1736 (`wa.me/15572431736`)
-- **Divisions:** Auto spare parts (active), electric mountain bikes (active),
-  nonwoven & technical textiles — PP spunbond fabric (active), general
-  merchandise sourcing (on request), baby care (coming soon).
+- **Focus:** Nonwoven fabric is the ONLY active line — lead with it everywhere.
+  Types: PP spunbond (S/SS/SSS), SMS/SMMS, meltblown, needle punched, spunlace,
+  laminated, specialty treated, printed/perforated, plus finished nonwoven goods.
+- **Other lines:** Electric mountain bikes and auto spare parts are "On request"
+  (via Athena's network). **Baby Products** is "Coming soon" — non-food,
+  non-medical only (diapers, wipes, toys, clothing, strollers, nursery gear).
+  Don't call it "Baby Care". Say "product lines", not "divisions", in copy.
+- **Images:** Don't copy photos from supplier/competitor sites (e.g. raysonchina.com,
+  spunweb.com). Fabric visuals are CSS textures (`.tx-*` classes). Real photos
+  go in only if they're GlobalLynk's own or used with written permission.
 - **Sister company:** Athena General Trading (athenageneraltrading.com). Product
   content (parts categories, vehicle brands, e-MTB specs, QC process, trade
   terms) is shared with Athena. Do **not** copy Athena's Dubai-specific claims
@@ -40,18 +48,24 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
   destination countries tied to them (e.g. individual shipments). Keep
   market lists generic.
 
-## Design System (styles.css :root)
+## Design System (styles.css :root) — based on the business card
 
-- **Colors:** navy `#12233F` / `#0B1830` / `#07101F`, steel `#2E4A73`, brass
-  `#A87C3F` / `#C79A5D` / `#E2B878`, cream `#F6F3EC`, ink `#1E2530` / `#4B5566`.
-- **Type:** Fraunces (headings), Inter (body), JetBrains Mono (labels/eyebrows,
-  "shipping manifest" feel). All loaded from Google Fonts in each page `<head>`.
-- **Layout:** `.container` max 1160px. Sections: `.section`, `.section-alt`
-  (white), `.section-dark` (navy). Breakpoints: 980px, 800px (mobile nav), 560px.
+- **Colors:** ivory paper `#EFE8DD` / `#FAF7F2`, taupe ink `#4A4238`,
+  espresso `#3A332B` (dark sections, footer), champagne gold `#A8844E` /
+  `#C4A46E` / `#E0C894`, and `--metal` (brushed-gold gradient strip, used for
+  the ticker, footer top and CTA band). Keep the site light and warm — no navy.
+- **Type:** Fraunces (headings), Inter (body, and the "GlobalLynk" wordmark),
+  JetBrains Mono (labels/eyebrows). Google Fonts in each page `<head>`.
+- **Icons:** gold medallion circles (`.medal`, `.fact-icon`) as on the card.
+- **Layout:** `.container` max 1160px. Sections: `.section`, `.section-alt`,
+  `.section-dark`. Breakpoints: 980px, 800px (mobile nav), 560px.
+- Floating email + WhatsApp buttons (`.float-actions`) appear on every page.
 - Scroll-reveal: add `.reveal` (optional `data-delay="1..3"`).
 
 ## main.js notes
 
+- `FABRICS` holds the home-page fabric explorer data; the lens magnifier scales a
+  copy of the CSS texture. Products catalog filter uses `data-apps` on `.fab-card`.
 - `Globe()` draws an orthographic canvas globe. Continents come from the
   simplified `LAND` polygons; ports/cities from `HUBS`. `index.html` uses the
   auto-spinning mode; `markets.html` (`data-mode="markets"`) rotates to the

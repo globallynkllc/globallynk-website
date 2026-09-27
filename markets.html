@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Markets &amp; Logistics | GlobalLynk LLC</title>
   <meta name="description" content="Where GlobalLynk trades: sourcing origins, buyer markets across six continents, indicative transit times, Incoterms, payment terms, export documentation and quality control." />
-  <meta name="theme-color" content="#0B1830" />
+  <meta name="theme-color" content="#EFE8DD" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo" aria-label="GlobalLynk LLC home">
-        <span class="logo-mark">GL</span>
-        <span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span>
+        <img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44">
+        <span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
@@ -49,7 +49,7 @@
     </section>
 
     <!-- Market explorer -->
-    <section id="markets" class="section section-dark" style="overflow:hidden">
+    <section id="markets" class="section section-alt" style="overflow:hidden">
       <div class="container">
         <div class="section-head reveal">
           <div>
@@ -225,9 +225,9 @@
           <div class="reveal" data-delay="1">
             <p class="eyebrow">Product-specific</p>
             <table class="spec-table">
+              <tr><th>Nonwoven fabric</th><td>Technical data sheet, roll labels, test reports (GSM, tensile strength, treatments) on request</td></tr>
               <tr><th>E-bikes &amp; batteries</th><td>UN 38.3 test summary, MSDS, DG declaration, CE Declaration of Conformity (EU)</td></tr>
               <tr><th>Auto parts</th><td>Original part numbers and packaging, traceability to production origin</td></tr>
-              <tr><th>Nonwoven fabric</th><td>Technical data sheet, test reports (GSM, tensile strength) on request</td></tr>
               <tr><th>Any product</th><td>Destination-specific certificates arranged on request</td></tr>
             </table>
           </div>
@@ -247,18 +247,19 @@
   </main>
 
   <footer class="site-footer">
+    <div class="metal-strip" aria-hidden="true"></div>
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-mark">GL</span><span class="logo-text">GlobalLynk<span class="logo-suffix"> LLC</span></span></a>
-        <p>International general trading — linking manufacturers with buyers worldwide.</p>
+        <a href="index.html" class="logo"><img class="logo-mark" src="logo-mark.svg" alt="" width="44" height="44"><span class="logo-text">GlobalLynk<span class="logo-suffix">LLC</span></span></a>
+        <p>International trading — linking manufacturers with buyers worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>Products</h4>
         <ul>
-          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="products.html#nonwoven">Nonwoven Fabrics</a></li>
           <li><a href="products.html#e-bikes">Electric Mountain Bikes</a></li>
-          <li><a href="products.html#textiles">Nonwoven Textiles</a></li>
-          <li><a href="products.html#baby">Baby Care</a></li>
+          <li><a href="products.html#auto-parts">Auto Spare Parts</a></li>
+          <li><a href="products.html#baby">Baby Products</a></li>
           <li><a href="markets.html">Markets &amp; Logistics</a></li>
         </ul>
       </div>
@@ -279,9 +280,16 @@
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/15572431736" target="_blank" rel="noopener" aria-label="Chat with GlobalLynk on WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/></svg>
-  </a>
+  <div class="float-actions">
+    <a class="float-btn float-mail" href="mailto:globallynkllc@gmail.com" aria-label="Email GlobalLynk">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      <span class="float-label">Email us</span>
+    </a>
+    <a class="float-btn float-wa" href="https://wa.me/15572431736" target="_blank" rel="noopener" aria-label="Chat with GlobalLynk on WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/></svg>
+      <span class="float-label">WhatsApp</span>
+    </a>
+  </div>
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script src="main.js" defer></script>

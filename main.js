@@ -263,18 +263,18 @@
 
       // Atmosphere glow
       var g = ctx.createRadialGradient(cx, cy, R * 0.9, cx, cy, R * 1.35);
-      g.addColorStop(0, "rgba(199,154,93,0.20)");
-      g.addColorStop(1, "rgba(199,154,93,0)");
+      g.addColorStop(0, "rgba(196,164,110,0.28)");
+      g.addColorStop(1, "rgba(196,164,110,0)");
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(cx, cy, R * 1.35, 0, Math.PI * 2); ctx.fill();
 
       // Sphere body
       var s = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-      s.addColorStop(0, "#1D3560");
-      s.addColorStop(1, "#08132A");
+      s.addColorStop(0, "#FCFAF5");
+      s.addColorStop(1, "#E2D6C3");
       ctx.fillStyle = s;
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = "rgba(199,154,93,0.35)"; ctx.lineWidth = 1; ctx.stroke();
+      ctx.strokeStyle = "rgba(168,132,78,0.45)"; ctx.lineWidth = 1; ctx.stroke();
 
       // Lattice dots
       var ds = Math.max(1.2, R / 190);
@@ -283,10 +283,10 @@
         if (v[2] <= 0) continue;
         var p = screen(v);
         if (dots[i][3]) {
-          ctx.fillStyle = "rgba(226,184,120," + (0.25 + v[2] * 0.6).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(74,66,56," + (0.18 + v[2] * 0.5).toFixed(3) + ")";
           ctx.fillRect(p[0] - ds / 2, p[1] - ds / 2, ds, ds);
         } else {
-          ctx.fillStyle = "rgba(143,179,232," + (0.04 + v[2] * 0.10).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(122,106,85," + (0.04 + v[2] * 0.08).toFixed(3) + ")";
           ctx.fillRect(p[0] - 0.6, p[1] - 0.6, 1.2, 1.2);
         }
       }
@@ -295,7 +295,7 @@
       ctx.lineCap = "round";
       routes.forEach(function (rt) {
         var pts = rt.pts.map(rotate), n = pts.length - 1;
-        ctx.strokeStyle = "rgba(199,154,93,0.30)"; ctx.lineWidth = 1;
+        ctx.strokeStyle = "rgba(168,132,78,0.45)"; ctx.lineWidth = 1.1;
         ctx.beginPath();
         var pen = false;
         for (var k = 0; k <= n; k++) {
@@ -312,7 +312,7 @@
           if (!shown(pts[j]) || !shown(pts[j + 1])) continue;
           var p1 = screen(pts[j]), p2 = screen(pts[j + 1]);
           var alpha = (j - a) / Math.max(1, b - a);
-          ctx.strokeStyle = "rgba(255,221,160," + alpha.toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(176,128,52," + alpha.toFixed(3) + ")";
           ctx.lineWidth = 2;
           ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.stroke();
         }
@@ -329,14 +329,14 @@
         if (!opts.allHubs && !hq && !lit && !isRouted(key)) return;
         var base = hq ? 4 : lit ? 3.4 : 2.2;
         if (hq || lit) {
-          ctx.strokeStyle = "rgba(226,184,120," + (0.6 - pulse * 0.5).toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(168,132,78," + (0.7 - pulse * 0.6).toFixed(3) + ")";
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.arc(p[0], p[1], base + 3 + pulse * 7, 0, Math.PI * 2); ctx.stroke();
         }
-        ctx.fillStyle = hq ? "#FFE2B0" : src ? "#8FB3E8" : lit ? "#E2B878" : "rgba(226,184,120,.85)";
+        ctx.fillStyle = hq ? "#8E6E40" : src ? "#6B6256" : lit ? "#A8844E" : "rgba(168,132,78,.9)";
         ctx.beginPath(); ctx.arc(p[0], p[1], base, 0, Math.PI * 2); ctx.fill();
         if ((hq || lit) && v[2] > 0.25) {
-          ctx.fillStyle = "rgba(255,255,255," + Math.min(1, v[2] * 1.2).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(58,51,43," + Math.min(1, v[2] * 1.2).toFixed(3) + ")";
           ctx.fillText(hq ? "GlobalLynk · " + h.n : h.n, p[0] + base + 5, p[1] + 4);
         }
       });
@@ -493,6 +493,90 @@
     });
   });
 
+  /* ---------- Nonwoven fabric explorer (home) ---------- */
+  var FABRICS = {
+    spunbond: { k: "Most versatile", t: "PP Spunbond", s: "Continuous filaments, thermally bonded", x: "Polypropylene filaments laid into a web and heat-bonded. Strong, light, breathable and cost-effective — the workhorse of the nonwoven world, available in single, double or triple beam (S, SS, SSS).", gsm: "10–200 gsm", w: "Up to 3.2m", m: "100% polypropylene", p: "Strength-to-weight", u: ["Shopping bags", "Furniture & mattresses", "Crop covers", "Hygiene", "Tablecloths", "Packaging"] },
+    sms: { k: "Barrier fabric", t: "SMS / SMMS", s: "Spunbond + meltblown + spunbond layers", x: "A meltblown barrier layer sandwiched between spunbond layers. Breathable, but resists fluids and bacteria, which makes it the standard for disposable medical wear.", gsm: "15–80 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Fluid & bacterial barrier", u: ["Surgical gowns", "Drapes", "Caps", "Protective clothing", "Hygiene leg cuffs"] },
+    meltblown: { k: "Filtration grade", t: "Meltblown", s: "Ultra-fine microfiber web", x: "Extremely fine fibers blown into a dense, random web. The fine structure traps particles, which is why meltblown is used as the filter layer in masks and air or liquid filters.", gsm: "15–100 gsm", w: "Up to 1.6m", m: "Polypropylene", p: "High filtration", u: ["Mask filter layer", "Air filters", "Liquid filtration", "Oil absorbents", "Insulation"] },
+    needle: { k: "Heavy duty", t: "Needle Punched", s: "Fibers mechanically interlocked by needles", x: "Staple fibers entangled by barbed needles into a dense, felt-like fabric. Tough, thick and dimensionally stable.", gsm: "80–1,000 gsm", w: "Up to 4m+", m: "Polyester (PET) or PP", p: "Durability & bulk", u: ["Geotextiles", "Carpet backing", "Automotive interiors", "Mattress padding", "Felt"] },
+    spunlace: { k: "Soft & absorbent", t: "Spunlace", s: "Fibers entangled by water jets", x: "High-pressure water jets entangle the fibers, giving a soft, cloth-like fabric with no binders. Absorbent and gentle on skin.", gsm: "30–120 gsm", w: "Up to 3.4m", m: "Viscose / polyester blends", p: "Softness & absorbency", u: ["Wet wipes", "Baby wipes", "Cosmetic pads", "Cleaning cloths", "Towels"] },
+    laminated: { k: "Waterproof", t: "Laminated Nonwoven", s: "Nonwoven bonded to film or woven", x: "Nonwoven laminated with PE film, BOPP or woven raffia for a waterproof, printable, tougher fabric.", gsm: "40–150 gsm", w: "Up to 3.2m", m: "PP + PE / BOPP / raffia", p: "Waterproof", u: ["Protective gowns", "Laminated bags", "Mattress protectors", "Roofing underlay", "Packaging"] },
+    treated: { k: "Performance finishes", t: "Specialty Treated", s: "Spunbond with functional treatment", x: "Spunbond fabric finished for a specific job: hydrophilic for hygiene topsheets, UV-stabilized for outdoor use, flame-retardant for furniture, anti-static, anti-slip, antibacterial or super soft.", gsm: "10–200 gsm", w: "Up to 3.2m", m: "Polypropylene + additives", p: "Built for purpose", u: ["Hygiene topsheets", "UV crop covers", "FR upholstery", "Anti-slip backing", "Electronics packing"] },
+    printed: { k: "Custom finish", t: "Printed & Perforated", s: "Spunbond with print or perforation", x: "Your pattern, brand or logo printed on the roll, or precision perforations for tearing and airflow. Popular for tableware and gift wrap.", gsm: "25–120 gsm", w: "Up to 3.2m", m: "Polypropylene", p: "Your design", u: ["Printed tablecloths", "Flower wrapping", "Branded bags", "Place mats", "Hygiene"] }
+  };
+  var fx = $(".fx");
+  if (fx) {
+    var fxTabs = $$(".fx-tab", fx), swatch = $("[data-swatch]", fx), lensEl = $(".lens", fx), lensIn = $("[data-lens]", fx);
+    var stage = $(".fx-stage", fx), body = $(".fx-body", fx), dots = $$(".color-dot", fx);
+    var setTexture = function (el, key) { el.className = el.className.replace(/\btx-\w+/g, "") + " tx-" + key; };
+    var showFab = function (key, focus) {
+      var f = FABRICS[key];
+      fxTabs.forEach(function (tb) {
+        var on = tb.getAttribute("data-fab") === key;
+        tb.setAttribute("aria-selected", on); tb.tabIndex = on ? 0 : -1;
+        if (on && focus) tb.focus();
+      });
+      setTexture(swatch, key); setTexture(lensIn, key);
+      $('[data-fx="kicker"]', fx).textContent = f.k;
+      $('[data-fx="title"]', fx).textContent = f.t;
+      $('[data-fx="structure"]', fx).textContent = f.s;
+      $('[data-fx="text"]', fx).textContent = f.x;
+      $('[data-fx="gsm"]', fx).textContent = f.gsm;
+      $('[data-fx="width"]', fx).textContent = f.w;
+      $('[data-fx="material"]', fx).textContent = f.m;
+      $('[data-fx="prop"]', fx).textContent = f.p;
+      $('[data-fx="uses"]', fx).innerHTML = f.u.map(function (u) { return "<span>" + u + "</span>"; }).join("");
+      body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
+    };
+    fxTabs.forEach(function (tb, i) {
+      tb.addEventListener("click", function () { showFab(tb.getAttribute("data-fab")); });
+      tb.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        showFab(fxTabs[(i + d + fxTabs.length) % fxTabs.length].getAttribute("data-fab"), true);
+      });
+    });
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        dots.forEach(function (x) { x.setAttribute("aria-pressed", x === dot); });
+        stage.style.setProperty("--fab", dot.getAttribute("data-color"));
+        [swatch, lensIn].forEach(function (el) {
+          el.style.setProperty("--fab", dot.getAttribute("data-color"));
+          el.classList.toggle("dark-fab", dot.hasAttribute("data-dark"));
+        });
+      });
+    });
+    // Magnifier: the lens holds a copy of the swatch scaled up around the cursor
+    var ZOOM = 3;
+    stage.addEventListener("pointermove", function (e) {
+      var r = stage.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, L = lensEl.offsetWidth;
+      lensEl.style.left = x - L / 2 + "px";
+      lensEl.style.top = y - L / 2 + "px";
+      lensIn.style.width = r.width + "px";
+      lensIn.style.height = r.height + "px";
+      lensIn.style.transform = "translate(" + (L / 2 - x * ZOOM) + "px," + (L / 2 - y * ZOOM) + "px) scale(" + ZOOM + ")";
+    });
+    showFab("spunbond");
+  }
+
+  /* ---------- Fabric catalog filter (products) ---------- */
+  var appBtns = $$("[data-app]");
+  if (appBtns.length) {
+    var fabCards = $$("#fab-grid .fab-card");
+    appBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.getAttribute("data-app");
+        appBtns.forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+        fabCards.forEach(function (c) {
+          var match = a === "all" || c.getAttribute("data-apps").split(" ").indexOf(a) > -1;
+          c.classList.toggle("dim", !match);
+          c.classList.toggle("hit", match && a !== "all");
+        });
+      });
+    });
+  }
+
   /* ---------- Container load planner ---------- */
   var planner = $("[data-planner]");
   if (planner) {
@@ -535,7 +619,7 @@
       btn.addEventListener("click", function () {
         var v = btn.getAttribute("data-preset").split(",");
         inL.value = v[0]; inW.value = v[1]; inH.value = v[2]; inKg.value = v[3];
-        if (btn.textContent === "Pallet") { inQ.value = range.value = 20; }
+        if (btn.hasAttribute("data-qty")) { inQ.value = range.value = btn.getAttribute("data-qty"); }
         clearPresets(); btn.setAttribute("aria-pressed", "true");
         calc();
       });
@@ -620,7 +704,7 @@
       var u = USES.filter(function (x) { return v <= x[0]; })[0] || USES[USES.length - 1];
       $("#gsm-uses").textContent = u[1];
       var d = 0.2 + (v / 200) * 0.8;
-      fabric.style.backgroundSize = (10 - d * 6).toFixed(1) + "px " + (10 - d * 6).toFixed(1) + "px, " + (13 - d * 7).toFixed(1) + "px " + (13 - d * 7).toFixed(1) + "px";
+      fabric.style.filter = "contrast(" + (0.7 + d * 0.9).toFixed(2) + ")";
       fabric.style.opacity = (0.55 + d * 0.45).toFixed(2);
     };
     gsm.addEventListener("input", upd);
@@ -665,7 +749,7 @@
       "Auto Spare Parts": ["OEM part numbers, or vehicle make, model, year and engine code.", "e.g. Brake pads for Toyota Hilux 2018–2022, OEM 04465-0K360"],
       "Electric Mountain Bikes": ["Bike type, motor/battery preference, branded or private label.", "e.g. Full-suspension e-MTB, mid-drive 250W, 630Wh, private label with our logo"],
       "Nonwoven Fabric": ["Fabric type, GSM, width, color and any treatment.", "e.g. PP spunbond, 70 GSM, 1.6m width, white, UV treated, rolls"],
-      "Baby Care (coming soon)": ["Tell us which baby products interest you — we'll contact you at launch.", "e.g. Diapers sizes 1–5 and baby wipes for retail"],
+      "Baby Products (coming soon)": ["Tell us which baby products interest you (non-food, non-medical) — we'll contact you at launch.", "e.g. Diapers sizes 1–5, soft toys and strollers for retail"],
       "Other / General sourcing": ["Describe the product, specification and any reference photos or links.", "e.g. Stainless steel kitchen sinks, 60×45cm, single bowl"]
     };
     var params = new URLSearchParams(location.search);
