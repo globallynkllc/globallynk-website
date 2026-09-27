@@ -111,9 +111,9 @@ update the nav and the footer "Explore" list in **every** page.
 - Dropdown nav: `.nav-caret` toggles `.open`; hover/focus opens on desktop; Escape closes.
 - Quote builder (contact.html) reads `?division=auto|bike|textile|baby|other` and
   `?fabric=<name>` (pre-fills the description). It sends via mailto:/WhatsApp only.
-- JS strings: never put a literal line break inside a quoted string — use `
-`. A syntax error
-  anywhere in main.js silently kills every interactive feature on every page.
+- JS strings: never put a literal line break inside a quoted string — use the `\n` escape.
+  A syntax error anywhere in main.js silently kills every interactive feature on every page.
+  (Beware Python heredocs that write JS: `"\n"` in Python becomes a real line break.)
 - `Globe()` draws an orthographic canvas globe. Continents come from the
   simplified `LAND` polygons; ports/cities from `HUBS`. `index.html` uses the
   auto-spinning mode; `markets.html` (`data-mode="markets"`) rotates to the
