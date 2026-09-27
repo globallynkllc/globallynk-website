@@ -50,7 +50,9 @@ update the nav and the footer "Explore" list in **every** page.
 - **Legal name:** GlobalLynk LLC — motto "Linking Global Trade"
 - **Registered address:** 30 N Gould St, Ste N, Sheridan, WY 82801, USA
 - **Team:** Jyoti Adkuloo — Founder; Dheeraj Adkuloo — Managing Director
-  ("Meet the team" in the About section of index.html; initials medallions until photos arrive).
+  ("Meet the team" on about.html; gold initials medallions until headshots arrive; role shown
+  as plain text under the name; LinkedIn buttons). Bios are placeholder wording — replace when
+  the user sends real ones. (The printed business card wrongly lists Jyoti as MD; the site is right.)
 - **Email:** globallynkllc@gmail.com · **Phone/WhatsApp:** +1 (557) 243-1736 (`wa.me/15572431736`)
 - **Business model:** GlobalLynk does NOT manufacture or produce anything. It sources
   from suppliers and ships to buyers. Never write "we produce", "our mill", "made by us", etc.
@@ -69,9 +71,12 @@ update the nav and the footer "Explore" list in **every** page.
   terms) is shared with Athena. Do **not** copy Athena's Dubai-specific claims
   (Dubai/Ajman offices, Jebel Ali shipping origin, "15+ years", "40+ markets",
   "180+ ports", UAE tax advantages) onto GlobalLynk.
-- **Confidential:** Do not mention specific past deals, customers, or
-  destination countries tied to them (e.g. individual shipments). Keep
-  market lists generic.
+- **Confidential:** Do not describe specific past deals, customers or shipments. The user
+  chose to have the home hero rotator start with "Colombia, Dubai" as destination words —
+  that's fine, but never say what was shipped there or to whom. Colombia is intentionally
+  NOT in the Latin America list in main.js `REGIONS` (user hasn't decided).
+- **Settled decisions — don't re-propose:** keep the name "Markets & Logistics"; keep all
+  6 "Why GlobalLynk" cards on the home page; navy primary buttons (see Design System).
 
 ## Design System (styles.css :root) — based on the business card
 
@@ -99,8 +104,16 @@ update the nav and the footer "Explore" list in **every** page.
 
 ## main.js notes
 
-- `FABRICS` holds the home-page fabric explorer data; the lens magnifier scales a
-  copy of the CSS texture. Products catalog filter uses `data-apps` on `.fab-card`.
+- `FABRICS` holds the fabric explorer data (Products > Nonwoven); `g` is the guide-page slug.
+  The lens magnifier scales a copy of the CSS texture. Catalog cards (`.fab-card[data-fab]`)
+  open their fabric in the explorer; the application filter uses `data-apps`. Keep `FABRICS`
+  consistent with `tools/fabrics.py` when editing specs.
+- Dropdown nav: `.nav-caret` toggles `.open`; hover/focus opens on desktop; Escape closes.
+- Quote builder (contact.html) reads `?division=auto|bike|textile|baby|other` and
+  `?fabric=<name>` (pre-fills the description). It sends via mailto:/WhatsApp only.
+- JS strings: never put a literal line break inside a quoted string — use `
+`. A syntax error
+  anywhere in main.js silently kills every interactive feature on every page.
 - `Globe()` draws an orthographic canvas globe. Continents come from the
   simplified `LAND` polygons; ports/cities from `HUBS`. `index.html` uses the
   auto-spinning mode; `markets.html` (`data-mode="markets"`) rotates to the
@@ -117,7 +130,38 @@ update the nav and the footer "Explore" list in **every** page.
 
 ## Local Preview
 
-`python -m http.server 8000` in this folder, then open http://localhost:8000
+`python serve.py 8000` in this folder, then open http://localhost:8000
+(plain `python -m http.server` breaks the clean URLs).
+
+## Testing before every push
+
+1. **Links:** regex over every `href="/page#id"` in `*.html` and `nonwoven/*.html`; confirm each
+   page file exists and each `#id` exists in it.
+2. **Script ran:** load each page in headless Chrome and confirm `<html>` no longer has the
+   `no-js` class; also `new Function(mainJsText)` to catch syntax errors.
+3. **Contrast & overflow:** iframe harness at 1400px and 390px computing WCAG ratios
+   (4.5:1 body, 3:1 large). Gradient-background buttons are false positives — skip them.
+4. **Visual:** headless Chrome screenshots
+   (`"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --screenshot=...`),
+   with `--force-prefers-reduced-motion` so scroll-reveal content isn't caught mid-fade; wrap
+   in a 390px iframe for mobile.
+5. After pushing, poll the live URL until the change is served, then re-check it.
+
+## Working with the owner
+
+- Not a developer: explain in plain words; show before/after screenshots (inject proposed CSS
+  into an iframe preview — don't edit the site) before visual changes, and wait for a choice.
+- Ask before deleting anything. Never touch `D:\Global Data\Wesbite\Archive`.
+- Commit and push after each approved change (site auto-deploys). Commit trailer:
+  `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
+- Keep temporary files in the session scratchpad and delete them when done.
+
+## Open items (waiting on the owner)
+
+- Real bios + square headshots for Jyoti and Dheeraj.
+- Which fabrics they trade most and real supplied specs (replace "typical" ranges).
+- Sanity-check transit-time ranges (`SEA` in main.js).
+- Whether to add Colombia to the Latin America country list.
 
 ## Deployment
 
@@ -126,9 +170,20 @@ automatically from `main` (repo root) on every push (~1 minute). The `CNAME` fil
 in the repo root holds the domain; don't delete it. Old URL
 globallynkllc.github.io/globallynk-website redirects here.
 
-DNS is managed at the registered agent (nameservers NS1/NS2.HOSTING.BUSINESSIDENTITY.LLC):
-- `@` A → 185.199.108.153 (GitHub Pages; .109/.110/.111 can be added as backups)
-- `www` CNAME → globallynkllc.github.io
-- Keep MX, TXT (SPF/DKIM/DMARC/_acme-challenge), `mail` and `*` records — they run email.
+HTTPS: certificate issued by GitHub (auto-renews); "Enforce HTTPS" is on. If a cert ever
+stalls in "pending", remove and re-add the custom domain in Pages settings to retrigger.
+
+DNS is managed at the registered agent's portal (nameservers NS1/NS2.HOSTING.BUSINESSIDENTITY.LLC):
+- `@` A → 185.199.108.153, .109.153, .110.153, .111.153 (GitHub Pages)
+- `www` CNAME → `globallynkllc.github.io.` (the portal requires the trailing dot)
+- TXT `google-site-verification=…` — Google Search Console domain verification; keep it.
+- Keep MX, SPF/DKIM/DMARC TXT, `_acme-challenge`, `mail` and `*` records — they run email.
+
+Google Search Console: domain property verified; sitemap submitted as the full URL
+`https://globallynkllc.com/sitemap.xml` (the box rejects a bare `sitemap.xml` for domain
+properties). Home, Products and PP Spunbond were submitted for indexing on 2026-09-27.
+
+GitHub: account `globallynkllc`; `gh` CLI installed via winget (Bash: add
+`/c/Program Files/GitHub CLI` to PATH).
 
 Repo: `github.com/globallynkllc/globallynk-website` (public — required for free Pages).
