@@ -263,18 +263,18 @@
 
       // Atmosphere glow
       var g = ctx.createRadialGradient(cx, cy, R * 0.9, cx, cy, R * 1.35);
-      g.addColorStop(0, "rgba(196,164,110,0.28)");
-      g.addColorStop(1, "rgba(196,164,110,0)");
+      g.addColorStop(0, "rgba(199,154,93,0.28)");
+      g.addColorStop(1, "rgba(199,154,93,0)");
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(cx, cy, R * 1.35, 0, Math.PI * 2); ctx.fill();
 
       // Sphere body
       var s = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-      s.addColorStop(0, "#FCFAF5");
-      s.addColorStop(1, "#E2D6C3");
+      s.addColorStop(0, "#1D3560");
+      s.addColorStop(1, "#08132A");
       ctx.fillStyle = s;
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = "rgba(168,132,78,0.45)"; ctx.lineWidth = 1; ctx.stroke();
+      ctx.strokeStyle = "rgba(199,154,93,0.45)"; ctx.lineWidth = 1; ctx.stroke();
 
       // Lattice dots
       var ds = Math.max(1.2, R / 190);
@@ -283,10 +283,10 @@
         if (v[2] <= 0) continue;
         var p = screen(v);
         if (dots[i][3]) {
-          ctx.fillStyle = "rgba(74,66,56," + (0.18 + v[2] * 0.5).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(226,184,120," + (0.25 + v[2] * 0.6).toFixed(3) + ")";
           ctx.fillRect(p[0] - ds / 2, p[1] - ds / 2, ds, ds);
         } else {
-          ctx.fillStyle = "rgba(122,106,85," + (0.04 + v[2] * 0.08).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(143,179,232," + (0.04 + v[2] * 0.10).toFixed(3) + ")";
           ctx.fillRect(p[0] - 0.6, p[1] - 0.6, 1.2, 1.2);
         }
       }
@@ -295,7 +295,7 @@
       ctx.lineCap = "round";
       routes.forEach(function (rt) {
         var pts = rt.pts.map(rotate), n = pts.length - 1;
-        ctx.strokeStyle = "rgba(168,132,78,0.45)"; ctx.lineWidth = 1.1;
+        ctx.strokeStyle = "rgba(199,154,93,0.55)"; ctx.lineWidth = 1.1;
         ctx.beginPath();
         var pen = false;
         for (var k = 0; k <= n; k++) {
@@ -312,7 +312,7 @@
           if (!shown(pts[j]) || !shown(pts[j + 1])) continue;
           var p1 = screen(pts[j]), p2 = screen(pts[j + 1]);
           var alpha = (j - a) / Math.max(1, b - a);
-          ctx.strokeStyle = "rgba(176,128,52," + alpha.toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(255,214,140," + alpha.toFixed(3) + ")";
           ctx.lineWidth = 2;
           ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.stroke();
         }
@@ -329,14 +329,14 @@
         if (!opts.allHubs && !hq && !lit && !isRouted(key)) return;
         var base = hq ? 4 : lit ? 3.4 : 2.2;
         if (hq || lit) {
-          ctx.strokeStyle = "rgba(168,132,78," + (0.7 - pulse * 0.6).toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(226,184,120," + (0.6 - pulse * 0.5).toFixed(3) + ")";
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.arc(p[0], p[1], base + 3 + pulse * 7, 0, Math.PI * 2); ctx.stroke();
         }
-        ctx.fillStyle = hq ? "#8E6E40" : src ? "#6B6256" : lit ? "#A8844E" : "rgba(168,132,78,.9)";
+        ctx.fillStyle = hq ? "#FFE2B0" : src ? "#8FB3E8" : lit ? "#E2B878" : "rgba(226,184,120,.85)";
         ctx.beginPath(); ctx.arc(p[0], p[1], base, 0, Math.PI * 2); ctx.fill();
         if ((hq || lit) && v[2] > 0.25) {
-          ctx.fillStyle = "rgba(58,51,43," + Math.min(1, v[2] * 1.2).toFixed(3) + ")";
+          ctx.fillStyle = "rgba(255,255,255," + Math.min(1, v[2] * 1.2).toFixed(3) + ")";
           ctx.fillText(hq ? "GlobalLynk · " + h.n : h.n, p[0] + base + 5, p[1] + 4);
         }
       });

@@ -50,10 +50,13 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 
 ## Design System (styles.css :root) — based on the business card
 
-- **Colors:** ivory paper `#EFE8DD` / `#FAF7F2`, taupe ink `#4A4238`,
-  espresso `#3A332B` (dark sections, footer), champagne gold `#A8844E` /
-  `#C4A46E` / `#E0C894`, and `--metal` (brushed-gold gradient strip, used for
-  the ticker, footer top and CTA band). Keep the site light and warm — no navy.
+- **Colors:** PRIMARY = champagne gold `#C4A46E` (deeper `#A8844E` for
+  links/small text, `#E0C894` highlights) on ivory paper `#EFE8DD` / `#FAF7F2`,
+  from the business card, plus `--metal` (brushed-gold strip: ticker, footer
+  top, CTA band). SECONDARY = navy `#12233F` / `#0B1830` (token `--espresso`)
+  for headings, dark sections, footer, dark buttons and the globe; steel
+  `#2E4A73` as a minor accent. Taupe `#4A4238` is only for the wordmark.
+  Avoid drifting back to an all-brown palette.
 - **Type:** Fraunces (headings), Inter (body, and the "GlobalLynk" wordmark),
   JetBrains Mono (labels/eyebrows). Google Fonts in each page `<head>`.
 - **Icons:** gold medallion circles (`.medal`, `.fact-icon`) as on the card.

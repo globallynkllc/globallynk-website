@@ -1,18 +1,20 @@
-/* ---------- Tokens — taken from the GlobalLynk business card ----------
-   Ivory paper, taupe-brown ink, champagne gold accents, brushed-gold strip. */
+/* ---------- Tokens ----------
+   Primary: champagne gold on ivory paper (from the business card).
+   Secondary: navy for headings, dark sections, footer and the globe. */
 :root {
   --ivory: #EFE8DD;          /* card paper */
   --paper: #FAF7F2;          /* raised surfaces */
   --sand: #E6DCCD;           /* alternate sections */
-  --taupe: #4A4238;          /* card text */
-  --espresso: #3A332B;       /* dark surfaces */
-  --espresso-deep: #2B251F;
+  --taupe: #4A4238;          /* card text — wordmark only */
+  --espresso: #12233F;       /* navy: headings, dark surfaces */
+  --espresso-deep: #0B1830;
+  --steel: #2E4A73;
   --umber: #7A6A55;
   --gold: #A8844E;           /* "LLC" gold, accessible on ivory */
   --gold-light: #C4A46E;
   --gold-glow: #E0C894;
-  --ink: #3A332B;
-  --ink-soft: #6B6256;
+  --ink: #1F2633;
+  --ink-soft: #5A6070;
   --line: #DCD1BF;
   --line-dark: rgba(255,255,255,0.12);
   --ok: #5E7F5A;
@@ -158,7 +160,7 @@ a:hover { text-decoration: underline; }
   background: var(--espresso);
   color: var(--paper);
 }
-.btn-dark:hover { background: var(--taupe); }
+.btn-dark:hover { background: var(--steel); }
 
 .btn-outline {
   background: transparent;
@@ -291,7 +293,7 @@ a:hover { text-decoration: underline; }
 .hero-grid > *, .about-grid > *, .split > *, .quote-wrap > *, .fx > *, .market-explorer > * { min-width: 0; }
 
 .hero h1 {
-  color: var(--taupe);
+  color: var(--espresso);
   font-size: clamp(2.5rem, 5.4vw, 4.3rem);
   line-height: 1.04;
   letter-spacing: -0.015em;
@@ -506,7 +508,7 @@ a:hover { text-decoration: underline; }
 .step-dot {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: var(--taupe);
+  background: var(--steel);
   border: 1px solid rgba(224,200,148,.5);
   display: grid;
   place-items: center;
@@ -634,7 +636,7 @@ a:hover { text-decoration: underline; }
   position: absolute;
   inset: 0 auto 0 0;
   width: 0;
-  background: linear-gradient(90deg, var(--umber), var(--taupe));
+  background: linear-gradient(90deg, var(--steel), var(--espresso));
   transition: width .7s var(--ease), background .3s;
 }
 .box-fill.over { background: repeating-linear-gradient(45deg, #9B4B3B 0 8px, #B25A48 8px 16px); }
@@ -735,7 +737,7 @@ a:hover { text-decoration: underline; }
   pointer-events: none;
 }
 .page-hero .container { position: relative; }
-.page-hero h1 { color: var(--taupe); font-size: clamp(2.2rem, 4.6vw, 3.6rem); max-width: 780px; }
+.page-hero h1 { color: var(--espresso); font-size: clamp(2.2rem, 4.6vw, 3.6rem); max-width: 780px; }
 .page-hero p { color: var(--ink-soft); max-width: 620px; font-size: 1.06rem; }
 .subnav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
 .subnav a {
@@ -780,7 +782,7 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .tag.soon { background: rgba(168,132,78,.16); color: var(--gold); }
-.tag.muted { background: rgba(122,106,85,.13); color: var(--umber); }
+.tag.muted { background: rgba(46,74,115,.1); color: var(--steel); }
 
 .search { position: relative; margin-bottom: 22px; max-width: 460px; }
 .search input {
@@ -1224,7 +1226,7 @@ a:hover { text-decoration: underline; }
 .transit-route .mono { font-size: 0.64rem; color: var(--espresso); line-height: 1.4; }
 .transit-route .mono:last-child { text-align: right; }
 .transit-track { position: relative; height: 28px; border-bottom: 2px dashed var(--gold-light); }
-.ship { position: absolute; left: calc(100% - 34px); bottom: 2px; color: var(--taupe); }
+.ship { position: absolute; left: calc(100% - 34px); bottom: 2px; color: var(--espresso); }
 .transit-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .transit-numbers div { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; }
 .transit-numbers .mono { color: var(--ink-soft); font-size: 0.62rem; display: block; margin-bottom: 4px; }
