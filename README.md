@@ -2,6 +2,8 @@
 
 Website for GlobalLynk LLC, an international general trading company (Sheridan, Wyoming, USA).
 
+**Live site:** https://globallynkllc.github.io/globallynk-website/
+
 Plain HTML, CSS and JavaScript — no build step.
 
 ## Preview locally
@@ -21,4 +23,4 @@ Then open http://localhost:8000
 
 ## Deploy
 
-Push to `main`. If GitHub Pages is enabled (Settings → Pages → Deploy from branch → `main` / root), the site updates automatically within a minute or two.
+GitHub Pages is enabled (deploy from `main` / root). Push to `main` and the live site updates within a minute or two.

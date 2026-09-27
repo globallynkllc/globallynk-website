@@ -93,7 +93,8 @@ update the nav in **every** page's `<header>` and the footer "Explore" list.
 
 ## Deployment
 
-Static files only, so any static host works. The repo is
-`github.com/globallynkllc/globallynk-website`. GitHub Pages (deploy from
-`main` / root) or Cloudflare Pages connected to this repo both work with
-zero configuration.
+**Live:** https://globallynkllc.github.io/globallynk-website/ — GitHub Pages,
+deployed automatically from `main` (repo root) on every push; takes ~1 minute.
+Repo: `github.com/globallynkllc/globallynk-website` (public — required for free Pages).
+All links are relative, so the site works under the `/globallynk-website/` subpath
+and will keep working if a custom domain is added later (Settings → Pages).
