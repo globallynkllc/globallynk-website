@@ -17,7 +17,7 @@ Then open http://localhost:8000
 ## Pages
 
 - `index.html` — Home
-- `products.html` — Auto spare parts, electric mountain bikes, nonwoven textiles, baby care
+- `products.html` — Nonwoven fabrics, electric mountain bikes, auto spare parts, baby products
 - `markets.html` — Markets & logistics
 - `contact.html` — Request a quote
 
