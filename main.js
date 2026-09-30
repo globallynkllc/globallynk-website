@@ -706,9 +706,18 @@
       b.addEventListener("click", function () {
         var f = b.getAttribute("data-filter");
         fbtns.forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
-        brands.forEach(function (el) { el.classList.toggle("out", f !== "all" && el.getAttribute("data-o") !== f); });
+        applyBrandFilter(f);
       });
     });
+    // "lux" shows the luxury makes (data-lux); the other filters match origin (data-o)
+    function applyBrandFilter(f) {
+      brands.forEach(function (el) {
+        var show = f === "all" || (f === "lux" ? el.hasAttribute("data-lux") : el.getAttribute("data-o") === f);
+        el.classList.toggle("out", !show);
+      });
+    }
+    var startBtn = $('[data-filter][aria-pressed="true"]');
+    if (startBtn) applyBrandFilter(startBtn.getAttribute("data-filter"));
   }
 
   /* ---------- E-bike regulation toggle ---------- */
@@ -789,7 +798,7 @@
     var step = 1;
     var steps = $$("[data-step]", form), inds = $$("[data-step-ind]", form);
     var HINTS = {
-      "Auto Spare Parts": ["OEM part numbers, or vehicle make, model, year and engine code.", "e.g. Brake pads for Toyota Hilux 2018–2022, OEM 04465-0K360"],
+      "Genuine Luxury Auto Spare Parts": ["OEM part numbers, or vehicle make, model, year and engine code.", "e.g. Brake pads for Toyota Hilux 2018–2022, OEM 04465-0K360"],
       "Electric Mountain Bikes": ["Bike type, motor/battery preference, branded or private label.", "e.g. Full-suspension e-MTB, mid-drive 250W, 630Wh, private label with our logo"],
       "Nonwoven Fabric": ["Fabric type, GSM, width, color and any treatment.", "e.g. PP spunbond, 70 GSM, 1.6m width, white, UV treated, rolls"],
       "Baby Products (coming soon)": ["Tell us which baby products interest you (non-food, non-medical) — we'll contact you at launch.", "e.g. Diapers sizes 1–5, soft toys and strollers for retail"],
