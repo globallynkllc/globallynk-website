@@ -395,7 +395,7 @@ a:hover { text-decoration: underline; }
   gap: 28px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
-  max-width: 560px;
+  max-width: 640px;
 }
 .hero-meta div { display: flex; flex-direction: column; gap: 2px; }
 .hero-meta .mono { color: var(--umber); font-size: 0.68rem; }
@@ -1294,7 +1294,7 @@ a:hover { text-decoration: underline; }
 .port-card h3 { margin: 0; }
 .port-card p { color: var(--ink-soft); font-size: .9rem; margin: 0; }
 .port-card .more { margin-top: auto; padding-top: 12px; color: var(--gold); font-weight: 600; font-size: .88rem; }
-.portfolio { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
+.portfolio { grid-template-columns: repeat(4, 1fr); }
 .port-card.featured {
   background: radial-gradient(500px 240px at 100% 0%, rgba(196,164,110,.25), transparent 70%), var(--espresso);
   border-color: var(--espresso);
