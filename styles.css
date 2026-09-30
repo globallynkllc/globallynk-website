@@ -701,6 +701,12 @@ a:hover { text-decoration: underline; }
 .why-card:hover::before { opacity: 1; }
 .why-card .mono { color: var(--gold); display: block; margin-bottom: 18px; }
 .why-card p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+.line-more { margin: 24px 0 0; }
+/* Home product-line sections sit close together */
+.section.line-section { padding: 48px 0; }
+#home-nonwoven { padding-top: 24px; }
+#home-autoparts { padding-bottom: 88px; }
+.line-more a { font-weight: 600; }
 
 /* ---------- Load planner ---------- */
 .planner {
